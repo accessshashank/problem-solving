@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.FindPairWithDifferenceKSortedArray</StartupObject>
+    <StartupObject>Practice.Anagrams</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,15 +62,17 @@
     <Compile Include="Arrays\Union.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\nCr.cs" />
+    <Compile Include="Recursion\PalindromeUsingRecursion.cs" />
     <Compile Include="Recursion\Recursion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
+    <Compile Include="Strings\Anagrams.cs" />
+    <Compile Include="Strings\DuplicateCharsInString.cs" />
+    <Compile Include="Strings\DuplicateCharsInStringUsingBits.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Strings\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
