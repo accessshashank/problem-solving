@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Anagrams</StartupObject>
+    <StartupObject>Practice.Misc.SquaresInSortedOrder</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,6 +60,7 @@
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\Union.cs" />
+    <Compile Include="Misc\SquaresInSortedOrder.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\nCr.cs" />
     <Compile Include="Recursion\PalindromeUsingRecursion.cs" />
