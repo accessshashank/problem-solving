@@ -31,6 +31,20 @@ namespace Practice.LinkedList
             }
 
             Console.WriteLine();
+
+            Console.WriteLine("Recursive Display !");
+            RecursiveDisplay(ll.Head);
+            Console.WriteLine();
+        }
+
+        private static void RecursiveDisplay(Node node)
+        {
+            if (node == null) return;
+            else
+            {
+                Console.Write(node.Value + "->");
+                RecursiveDisplay(node.Next);
+            }
         }
 
         private static LinkedList CreateLinkedList(int size, int[] numArray)
