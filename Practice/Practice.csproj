@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Misc.SquaresInSortedOrder</StartupObject>
+    <StartupObject>Practice.LinkedList.LLOperations</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,6 +60,7 @@
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\Union.cs" />
+    <Compile Include="LinkedList\LLOperations.cs" />
     <Compile Include="Misc\SquaresInSortedOrder.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\nCr.cs" />
