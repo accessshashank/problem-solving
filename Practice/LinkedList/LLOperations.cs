@@ -20,7 +20,7 @@ namespace Practice.LinkedList
                 numArray[i - 1] = int.Parse(Console.ReadLine());
             }
 
-            LinkedList ll = LLHelper.CreateLinkedList(size, numArray);
+            LinkedList ll = LLHelper.CreateLinkedList(numArray);
 
             Console.WriteLine("Display !");
             LLHelper.Display(ll.Head);
@@ -189,9 +189,9 @@ namespace Practice.LinkedList
 
     public class LLHelper
     {
-        public static LinkedList CreateLinkedList(int size, int[] numArray)
+        public static LinkedList CreateLinkedList(int[] numArray)
         {
-            var ll = new LinkedList(size);
+            var ll = new LinkedList(numArray.Length);
             var node = new Node();
             node.Value = numArray[0];
             node.Next = null;
