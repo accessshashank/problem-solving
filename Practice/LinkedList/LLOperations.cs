@@ -20,7 +20,7 @@ namespace Practice.LinkedList
                 numArray[i - 1] = int.Parse(Console.ReadLine());
             }
 
-            LinkedList ll = CreateLinkedList(size, numArray);
+            LinkedList ll = LLHelper.CreateLinkedList(size, numArray);
 
             Console.WriteLine("Display !");
             Display(ll.Head);
@@ -49,6 +49,44 @@ namespace Practice.LinkedList
 
             Display(ll.Head);
             Console.WriteLine();
+
+            ll = InsertNodeAtBegining(ll);
+            Display(ll.Head);
+            Console.WriteLine();
+
+            ll = InsertNodeAtNthPosition(ll);
+            Display(ll.Head);
+            Console.WriteLine();
+        }
+
+        private static LinkedList InsertNodeAtNthPosition(LinkedList ll)
+        {
+            int position = 3;
+            Console.WriteLine("Inserting node 200 at 3rd position");
+            Node node = new Node();
+            node.Value = 200;
+            var temp = ll.Head;
+            for(int i=1; i<position-1;i++)
+            {
+                temp = temp.Next;
+            }
+
+            node.Next = temp.Next;
+            temp.Next = node;
+
+            return ll;
+        }
+
+        private static LinkedList InsertNodeAtBegining(LinkedList ll)
+        {
+            Console.WriteLine("Inserting node 500 in begining");
+            var temp = ll.Head;
+            var node = new Node();
+            node.Value = 500;
+            node.Next = ll.Head;
+            ll.Head = node;
+
+            return ll;
         }
 
         private static void Display(Node node)
@@ -156,7 +194,11 @@ namespace Practice.LinkedList
             }
         }
 
-        private static LinkedList CreateLinkedList(int size, int[] numArray)
+    }
+
+    public class LLHelper
+    {
+        public static LinkedList CreateLinkedList(int size, int[] numArray)
         {
             var ll = new LinkedList(size);
             var node = new Node();
@@ -165,7 +207,7 @@ namespace Practice.LinkedList
             ll.Head = node;
             ll.Tail = node;
 
-            for(int i=1; i< numArray.Length; i++)
+            for (int i = 1; i < numArray.Length; i++)
             {
                 var temp = new Node();
                 temp.Value = numArray[i];
@@ -178,7 +220,7 @@ namespace Practice.LinkedList
         }
     }
 
-    class LinkedList
+    public class LinkedList
     {
         public LinkedList(int size)
         {
@@ -189,7 +231,7 @@ namespace Practice.LinkedList
         public int Length { get; private set; }
     }
 
-    class Node
+    public class Node
     {
         public int Value { get; set; }
         public Node Next { get; set; }
