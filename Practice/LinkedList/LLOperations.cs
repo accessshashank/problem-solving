@@ -23,7 +23,7 @@ namespace Practice.LinkedList
             LinkedList ll = LLHelper.CreateLinkedList(size, numArray);
 
             Console.WriteLine("Display !");
-            Display(ll.Head);
+            LLHelper.Display(ll.Head);
             
 
             Console.WriteLine();
@@ -47,15 +47,15 @@ namespace Practice.LinkedList
 
             Console.WriteLine("IMPORTANT >> : Searched element moved to HEAD, Reprinting MODIFIED LL");
 
-            Display(ll.Head);
+            LLHelper.Display(ll.Head);
             Console.WriteLine();
 
             ll = InsertNodeAtBegining(ll);
-            Display(ll.Head);
+            LLHelper.Display(ll.Head);
             Console.WriteLine();
 
             ll = InsertNodeAtNthPosition(ll);
-            Display(ll.Head);
+            LLHelper.Display(ll.Head);
             Console.WriteLine();
         }
 
@@ -87,15 +87,6 @@ namespace Practice.LinkedList
             ll.Head = node;
 
             return ll;
-        }
-
-        private static void Display(Node node)
-        {
-            while (node != null)
-            {
-                Console.Write(node.Value + "->");
-                node = node.Next;
-            }
         }
 
         private static LinkedList MoveSearchedNodeToHead(LinkedList ll)
@@ -217,6 +208,15 @@ namespace Practice.LinkedList
             }
 
             return ll;
+        }
+
+        public static void Display(Node node)
+        {
+            while (node != null)
+            {
+                Console.Write(node.Value + "->");
+                node = node.Next;
+            }
         }
     }
 
