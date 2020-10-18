@@ -23,18 +23,127 @@ namespace Practice.LinkedList
             LinkedList ll = CreateLinkedList(size, numArray);
 
             Console.WriteLine("Display !");
-            var node = ll.Head;
-            while(node != null)
-            {
-                Console.Write(node.Value + "->");
-                node = node.Next;
-            }
+            Display(ll.Head);
+            
 
             Console.WriteLine();
 
             Console.WriteLine("Recursive Display !");
             RecursiveDisplay(ll.Head);
             Console.WriteLine();
+
+            
+            var sum = SumElements(ll);
+
+            Console.WriteLine("Sum of elements is : {0}", sum);
+
+            var maxValue = LargestNumber(ll);
+
+            Console.WriteLine("Largest of elements is : {0}", maxValue);
+
+            SearchAnElement(ll);
+
+            ll = MoveSearchedNodeToHead(ll);
+
+            Console.WriteLine("IMPORTANT >> : Searched element moved to HEAD, Reprinting MODIFIED LL");
+
+            Display(ll.Head);
+            Console.WriteLine();
+        }
+
+        private static void Display(Node node)
+        {
+            while (node != null)
+            {
+                Console.Write(node.Value + "->");
+                node = node.Next;
+            }
+        }
+
+        private static LinkedList MoveSearchedNodeToHead(LinkedList ll)
+        {
+            Console.WriteLine("Moving serched element to HEAD : ");
+            Console.Write("Enter element to be searched : ");
+            int element = int.Parse(Console.ReadLine());
+            Node previous = null;
+            Node current = ll.Head;
+            Node head = ll.Head;
+
+            while(current != null)
+            {
+                if(current.Value == element)
+                {
+                    if(current == head)
+                    {
+                        break;
+                    }
+
+                    previous.Next = current.Next;
+                    current.Next = head;
+                    ll.Head = current;
+                    break;
+                }
+                else
+                {
+                    previous = current;
+                    current = current.Next;
+                }
+            }
+            return ll;
+        }
+
+        private static void SearchAnElement(LinkedList ll)
+        {
+            Console.Write("Enter element to be searched : ");
+            int element = int.Parse(Console.ReadLine());
+
+            var temp = ll.Head;
+            bool found = false;
+            int counter = 0;
+            while(temp != null)
+            {
+                counter++;
+                if(temp.Value == element)
+                {
+                    found = true;
+                    break;
+                }
+                temp = temp.Next;
+            }
+
+            if (found) Console.WriteLine("Element {0} found at Node {1}", element, counter);
+            else Console.WriteLine("Element not found");
+        }
+
+        private static int LargestNumber(LinkedList ll)
+        {
+            var temp = ll.Head;
+            int maxValue = int.MinValue;
+
+            while(temp != null)
+            {
+                if(temp.Value > maxValue)
+                {
+                    maxValue = temp.Value;
+                }
+                temp = temp.Next;
+            }
+
+            return maxValue;
+        }
+
+        private static int SumElements(LinkedList ll)
+        {
+            var temp = ll.Head;
+            int sum = 0;
+
+            while(temp != null)
+            {
+                sum = sum + temp.Value;
+                temp = temp.Next;
+            }
+
+            return sum;
         }
 
         private static void RecursiveDisplay(Node node)
