@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.LinkedList.ReverseLL</StartupObject>
+    <StartupObject>Practice.LinkedList.ConcatenateLL</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,6 +61,7 @@
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\Union.cs" />
     <Compile Include="LinkedList\CheckLLIsSorted.cs" />
+    <Compile Include="LinkedList\ConcatenateLL.cs" />
     <Compile Include="LinkedList\DeletionOfANode.cs" />
     <Compile Include="LinkedList\InsertIntoSortedLL.cs" />
     <Compile Include="LinkedList\LLOperations.cs" />
