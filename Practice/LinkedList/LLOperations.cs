@@ -210,12 +210,53 @@ namespace Practice.LinkedList
             return ll;
         }
 
+        public static DoublyLinkedList CreateDoublyLinkedList(int[] numArray)
+        {
+            var dll = new DoublyLinkedList(numArray.Length);
+            var node = new DoublyNode();
+            node.Value = numArray[0];
+            node.Previous = null;
+            node.Next = null;
+            dll.Head = node;
+            dll.Tail = node;
+
+            for (int i = 1; i < numArray.Length; i++)
+            {
+                var temp = new DoublyNode();
+                temp.Value = numArray[i];
+                temp.Next = null;
+                temp.Previous = dll.Tail;
+                dll.Tail.Next = temp;
+                dll.Tail = temp;
+            }
+
+            return dll;
+        }
+
         public static void Display(Node node)
         {
             while (node != null)
             {
                 Console.Write(node.Value + "->");
                 node = node.Next;
+            }
+        }
+
+        public static void DisplayDoublyForward(DoublyNode node)
+        {
+            while (node != null)
+            {
+                Console.Write(node.Value + "->");
+                node = node.Next;
+            }
+        }
+
+        public static void DisplayDoublyBackward(DoublyNode node)
+        {
+            while (node != null)
+            {
+                Console.Write(node.Value + "<-");
+                node = node.Previous;
             }
         }
     }
@@ -231,9 +272,27 @@ namespace Practice.LinkedList
         public int Length { get; private set; }
     }
 
+    public class DoublyLinkedList
+    {
+        public DoublyLinkedList(int size)
+        {
+            Length = size;
+        }
+        public DoublyNode Head { get; set; }
+        public DoublyNode Tail { get; set; }
+        public int Length { get; private set; }
+    }
+
     public class Node
     {
         public int Value { get; set; }
         public Node Next { get; set; }
+    }
+
+    public class DoublyNode
+    {
+        public DoublyNode Previous { get; set; }
+        public int Value { get; set; }
+        public DoublyNode Next { get; set; }
     }
 }
