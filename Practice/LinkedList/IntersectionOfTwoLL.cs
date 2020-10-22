@@ -57,20 +57,12 @@ namespace Practice.LinkedList
 
             i--;
             j--;
-            bool scan = true;
             Node lastMatchedNode = null;
-            while(scan)
+            while(array1[i] == array2[j])
             {
-                if(array1[i] == array2[j])
-                {
-                    lastMatchedNode = array1[i];
-                    i--;
-                    j--;
-                }
-                else
-                {
-                    scan = false;
-                }
+                lastMatchedNode = array1[i];
+                i--;
+                j--;
             }
 
             Console.WriteLine("Intersection point is at Node {0}", lastMatchedNode.Value);
