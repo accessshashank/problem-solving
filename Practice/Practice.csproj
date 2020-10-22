@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.LinkedList.CircularDoublyLL</StartupObject>
+    <StartupObject>Practice.LinkedList.IntersectionOfTwoLL</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -67,9 +67,11 @@
     <Compile Include="LinkedList\DeletionOfANode.cs" />
     <Compile Include="LinkedList\DoublyLL.cs" />
     <Compile Include="LinkedList\InsertIntoSortedLL.cs" />
+    <Compile Include="LinkedList\IntersectionOfTwoLL.cs" />
     <Compile Include="LinkedList\LLOperations.cs" />
     <Compile Include="LinkedList\LoopInLinkedList.cs" />
     <Compile Include="LinkedList\MergeTwoSortedLL.cs" />
+    <Compile Include="LinkedList\MiddleNodeOfLL.cs" />
     <Compile Include="LinkedList\RemoveDuplicatesInSortedLL.cs" />
     <Compile Include="LinkedList\ReverseDoublyLL.cs" />
     <Compile Include="LinkedList\ReverseLL.cs" />
