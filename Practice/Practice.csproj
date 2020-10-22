@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.LinkedList.IntersectionOfTwoLL</StartupObject>
+    <StartupObject>Practice.Stack.StackUsingLL</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -82,6 +82,8 @@
     <Compile Include="Recursion\Recursion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
+    <Compile Include="Stack\StackUsingArray.cs" />
+    <Compile Include="Stack\StackUsingLL.cs" />
     <Compile Include="Strings\Anagrams.cs" />
     <Compile Include="Strings\DuplicateCharsInString.cs" />
     <Compile Include="Strings\DuplicateCharsInStringUsingBits.cs" />
