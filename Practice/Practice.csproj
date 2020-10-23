@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Stack.ParenthesisMatching</StartupObject>
+    <StartupObject>Practice.Stack.InfixToPostfix</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -82,6 +82,7 @@
     <Compile Include="Recursion\Recursion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
+    <Compile Include="Stack\InfixToPostfix.cs" />
     <Compile Include="Stack\ParenthesisMatching.cs" />
     <Compile Include="Stack\StackUsingArray.cs" />
     <Compile Include="Stack\StackUsingGeneric.cs" />
