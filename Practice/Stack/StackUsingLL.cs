@@ -79,7 +79,4 @@ namespace Practice.Stack.UsingLinkedList
             public Node Next { get; set; }
         }
     }
-
-
-
 }
