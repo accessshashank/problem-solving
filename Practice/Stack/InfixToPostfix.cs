@@ -10,10 +10,69 @@ namespace Practice.Stack
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Use only +, -, * /");
+            Console.WriteLine("Use only single digit numbers");
             Console.Write("Enter Infix Expression : ");
             var expression = Console.ReadLine();
             var postfix = ToPostfix(expression);
             Console.WriteLine("Postfix : {0}", postfix);
+            Console.WriteLine("Evaluating postfix expression ... !");
+            var eval = EvaluatePostfix(postfix);
+            Console.WriteLine("Result : {0}", eval);
+        }
+
+        private static int EvaluatePostfix(string postfix)
+        {
+            var result = int.MinValue;
+            int leftOperand = int.MinValue;
+            int rightOperand = int.MinValue;
+            var stack = new GenericStack<int>(postfix.Length);
+
+            for(int i=0; i< postfix.Length; i++)
+            {
+                var ch = postfix[i];
+
+                if(IsOperand(ch))
+                {
+                    stack.Push(int.Parse(ch.ToString()));
+                }
+                else
+                {
+                    rightOperand = stack.Pop();
+                    leftOperand = stack.Pop();
+                    switch(ch)
+                    {
+                        case '+':
+                            {
+                                result = leftOperand + rightOperand;
+                                stack.Push(result);
+                                break;
+                            }
+                        case '-':
+                            {
+                                result = leftOperand - rightOperand;
+                                stack.Push(result);
+                                break;
+                            }
+                        case '*':
+                            {
+                                result = leftOperand * rightOperand;
+                                stack.Push(result);
+                                break;
+                            }
+                        case '/':
+                            {
+                                result = leftOperand / rightOperand;
+                                stack.Push(result);
+                                break;
+                            }
+                    }
+                }
+
+            }
+
+            result = stack.Pop();
+            return result;
         }
 
         private static string ToPostfix(string expression)
