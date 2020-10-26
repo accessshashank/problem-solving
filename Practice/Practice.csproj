@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Queue.QueueUsingLL</StartupObject>
+    <StartupObject>Practice.Trees.CreateBinaryTree</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -94,12 +94,11 @@
     <Compile Include="Strings\Anagrams.cs" />
     <Compile Include="Strings\DuplicateCharsInString.cs" />
     <Compile Include="Strings\DuplicateCharsInStringUsingBits.cs" />
+    <Compile Include="Trees\CreateBinaryTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Trees\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
