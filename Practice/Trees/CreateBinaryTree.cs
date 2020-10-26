@@ -13,7 +13,16 @@ namespace Practice.Trees
         {
             Console.WriteLine("Creating Binary Tree ... !");
             var root = InitializeBinaryTree();
+            Console.WriteLine("Preorder  ... !");
             PreOrder(root);
+
+            Console.WriteLine();
+            Console.WriteLine("Inorder  ... !");
+            InOrder(root);
+
+            Console.WriteLine();
+            Console.WriteLine("Postorder  ... !");
+            PostOrder(root);
             Console.WriteLine();
         }
 
@@ -24,6 +33,27 @@ namespace Practice.Trees
                 Console.Write("({0}), ",node.Value);
                 PreOrder(node.Left);
                 PreOrder(node.Right);
+            }
+        }
+
+        private static void InOrder(TreeNode<int> node)
+        {
+            if (node != null)
+            {
+                
+                InOrder(node.Left);
+                Console.Write("({0}), ", node.Value);
+                InOrder(node.Right);
+            }
+        }
+
+        private static void PostOrder(TreeNode<int> node)
+        {
+            if (node != null)
+            {
+                PostOrder(node.Left);
+                PostOrder(node.Right);
+                Console.Write("({0}), ", node.Value);
             }
         }
 
