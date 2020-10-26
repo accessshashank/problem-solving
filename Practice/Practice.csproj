@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Queue.QueueUsingTwoStacks</StartupObject>
+    <StartupObject>Practice.Queue.QueueUsingLL</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -78,6 +78,7 @@
     <Compile Include="Misc\SquaresInSortedOrder.cs" />
     <Compile Include="Queue\CircularQueue.cs" />
     <Compile Include="Queue\QueueUsingGeneric.cs" />
+    <Compile Include="Queue\QueueUsingLL.cs" />
     <Compile Include="Queue\QueueUsingTwoStacks.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\nCr.cs" />
@@ -97,6 +98,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Trees\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
