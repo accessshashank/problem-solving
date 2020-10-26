@@ -13,6 +13,18 @@ namespace Practice.Trees
         {
             Console.WriteLine("Creating Binary Tree ... !");
             var root = InitializeBinaryTree();
+            PreOrder(root);
+            Console.WriteLine();
+        }
+
+        private static void PreOrder(TreeNode<int> node)
+        {
+            if(node != null)
+            {
+                Console.Write("({0}), ",node.Value);
+                PreOrder(node.Left);
+                PreOrder(node.Right);
+            }
         }
 
         // value -1 means not to create node/child
