@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Queue.CircularQueue</StartupObject>
+    <StartupObject>Practice.Queue.QueueUsingTwoStacks</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -78,6 +78,7 @@
     <Compile Include="Misc\SquaresInSortedOrder.cs" />
     <Compile Include="Queue\CircularQueue.cs" />
     <Compile Include="Queue\QueueUsingGeneric.cs" />
+    <Compile Include="Queue\QueueUsingTwoStacks.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\nCr.cs" />
     <Compile Include="Recursion\PalindromeUsingRecursion.cs" />
