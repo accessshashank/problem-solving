@@ -99,6 +99,7 @@ namespace Practice.Trees
         }
 
         // There is a trick applied with -ve numbers, make sure tree nodes do not have -ve number anytime.
+        // when both left and right subtree traversal is complete then popped node will have -ve value, so time to print
         private static void PostOrderIterative(TreeNode<int> node)
         {
             var stack = new GenericStack<TreeNode<int>>(50); // taking a fail safe size
