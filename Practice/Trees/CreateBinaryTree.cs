@@ -13,7 +13,7 @@ namespace Practice.Trees
         static void Main(string[] args)
         {
             Console.WriteLine("Creating Binary Tree ... !");
-            var root = InitializeBinaryTree();
+            var root = BinaryTreeHelper.InitializeBinaryTree();
             Console.WriteLine("Preorder  Recursive ... !");
             PreOrder(root);
 
@@ -138,8 +138,13 @@ namespace Practice.Trees
             }
         }
 
+
+    }
+
+    public class BinaryTreeHelper
+    {
         // value -1 means not to create node/child
-        private static TreeNode<int> InitializeBinaryTree()
+        public static TreeNode<int> InitializeBinaryTree()
         {
             var queue = new GenericLLQueue<TreeNode<int>>();
             TreeNode<int> root = null;
@@ -153,13 +158,13 @@ namespace Practice.Trees
             root.Right = null;
             queue.Enqueue(root);
 
-            while(!queue.IsEmpty())
+            while (!queue.IsEmpty())
             {
                 var p = queue.Dequeue();
 
                 Console.Write("Enter value for Left Child of Node ({0}) : ", p.Value);
                 val = int.Parse(Console.ReadLine());
-                if(val != -1)
+                if (val != -1)
                 {
                     var leftChild = new TreeNode<int>();
                     leftChild.Value = val;

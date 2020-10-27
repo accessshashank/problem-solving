@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Trees.CreateBinaryTree</StartupObject>
+    <StartupObject>Practice.Trees.CountNodesInBinaryTree</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -94,7 +94,9 @@
     <Compile Include="Strings\Anagrams.cs" />
     <Compile Include="Strings\DuplicateCharsInString.cs" />
     <Compile Include="Strings\DuplicateCharsInStringUsingBits.cs" />
+    <Compile Include="Trees\CountNodesInBinaryTree.cs" />
     <Compile Include="Trees\CreateBinaryTree.cs" />
+    <Compile Include="Trees\LevelOrderTraversal.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
