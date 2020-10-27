@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Practice.Queue;
+using Practice.Stack;
 
 namespace Practice.Trees
 {
@@ -13,17 +14,48 @@ namespace Practice.Trees
         {
             Console.WriteLine("Creating Binary Tree ... !");
             var root = InitializeBinaryTree();
-            Console.WriteLine("Preorder  ... !");
+            Console.WriteLine("Preorder  Recursive ... !");
             PreOrder(root);
 
             Console.WriteLine();
-            Console.WriteLine("Inorder  ... !");
+            Console.WriteLine("Preorder  Iterative ... !");
+            PreOrderIterative(root);
+
+            Console.WriteLine();
+            Console.WriteLine("Inorder  Recursive ... !");
             InOrder(root);
 
             Console.WriteLine();
-            Console.WriteLine("Postorder  ... !");
-            PostOrder(root);
+            Console.WriteLine("Inorder  Iterative ... !");
+            InOrderIterative(root);
+
             Console.WriteLine();
+            Console.WriteLine("Postorder  Recursive ... !");
+            PostOrder(root);
+
+            Console.WriteLine();
+            Console.WriteLine("Postorder  Iterative ... !");
+            PostOrderIterative(root);
+            Console.WriteLine();
+        }
+
+        private static void PreOrderIterative(TreeNode<int> node)
+        {
+            var stack = new GenericStack<TreeNode<int>>(50); // taking a fail safe size
+            while(node != null || !stack.IsEmpty())
+            {
+                if(node != null)
+                {
+                    Console.Write("({0}), ", node.Value);
+                    stack.Push(node);
+                    node = node.Left;
+                }
+                else
+                {
+                    node = stack.Pop();
+                    node = node.Right;
+                }
+            }
         }
 
         private static void PreOrder(TreeNode<int> node)
@@ -36,6 +68,25 @@ namespace Practice.Trees
             }
         }
 
+        private static void InOrderIterative(TreeNode<int> node)
+        {
+            var stack = new GenericStack<TreeNode<int>>(50); // taking a fail safe size
+            while (node != null || !stack.IsEmpty())
+            {
+                if (node != null)
+                {
+                    stack.Push(node);
+                    node = node.Left;
+                }
+                else
+                {
+                    node = stack.Pop();
+                    Console.Write("({0}), ", node.Value);
+                    node = node.Right;
+                }
+            }
+        }
+
         private static void InOrder(TreeNode<int> node)
         {
             if (node != null)
@@ -44,6 +95,35 @@ namespace Practice.Trees
                 InOrder(node.Left);
                 Console.Write("({0}), ", node.Value);
                 InOrder(node.Right);
+            }
+        }
+
+        // There is a trick applied with -ve numbers, make sure tree nodes do not have -ve number anytime.
+        private static void PostOrderIterative(TreeNode<int> node)
+        {
+            var stack = new GenericStack<TreeNode<int>>(50); // taking a fail safe size
+            while (node != null || !stack.IsEmpty())
+            {
+                if (node != null)
+                {
+                    stack.Push(node);
+                    node = node.Left;
+                }
+                else
+                {
+                    node = stack.Pop();
+                    if(node.Value > 0)
+                    {
+                        node.Value = node.Value * -1;
+                        stack.Push(node);
+                        node = node.Right;
+                    }
+                    else
+                    {
+                        Console.Write("({0}), ", node.Value * -1);
+                        node = null;
+                    }
+                }
             }
         }
 
