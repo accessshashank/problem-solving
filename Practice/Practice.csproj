@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Trees.CountNodesInBinaryTree</StartupObject>
+    <StartupObject>Practice.BinarySearchTree.CreateBinarySearchTree</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,6 +60,7 @@
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\Union.cs" />
+    <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
     <Compile Include="LinkedList\CheckLLIsSorted.cs" />
     <Compile Include="LinkedList\CircularDoublyLL.cs" />
     <Compile Include="LinkedList\CircularLL.cs" />
