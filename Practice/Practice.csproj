@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.BinarySearchTree.CreateBinarySearchTree</StartupObject>
+    <StartupObject>Practice.BinarySearchTree.GenerateBSTUsingPreorder</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,6 +61,8 @@
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\Union.cs" />
     <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\DeleteInBinarySearchTree.cs" />
+    <Compile Include="BinarySearchTree\GenerateBSTUsingPreorder.cs" />
     <Compile Include="LinkedList\CheckLLIsSorted.cs" />
     <Compile Include="LinkedList\CircularDoublyLL.cs" />
     <Compile Include="LinkedList\CircularLL.cs" />
