@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Trees.InvertBinaryTree</StartupObject>
+    <StartupObject>Practice.Misc.ProductOfAllExceptSelfInArray</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -78,6 +78,7 @@
     <Compile Include="LinkedList\RemoveDuplicatesInSortedLL.cs" />
     <Compile Include="LinkedList\ReverseDoublyLL.cs" />
     <Compile Include="LinkedList\ReverseLL.cs" />
+    <Compile Include="Misc\ProductOfAllExceptSelfInArray.cs" />
     <Compile Include="Misc\SquaresInSortedOrder.cs" />
     <Compile Include="Queue\CircularQueue.cs" />
     <Compile Include="Queue\QueueUsingGeneric.cs" />
