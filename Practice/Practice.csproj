@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Misc.ProductOfAllExceptSelfInArray</StartupObject>
+    <StartupObject>Practice.AVLTree.CreateAVLTree</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -60,6 +60,7 @@
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\Union.cs" />
+    <Compile Include="AVLTree\CreateAVLTree.cs" />
     <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\DeleteInBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\GenerateBSTUsingPreorder.cs" />
