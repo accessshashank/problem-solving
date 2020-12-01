@@ -27,6 +27,46 @@ namespace Practice.Heap
                 heapArray = InsertIntoMaxHeap(heapArray, i);
             }
             Console.WriteLine("Output Heap - ({0})", string.Join(",", heapArray.Where(x => x > -1)));
+
+            Console.WriteLine("Deleting elements : Only root is deleted everytime ");
+
+            for(int i=n; i>1; i--)
+            {
+                heapArray = Delete(heapArray, i);
+            }
+
+            Console.WriteLine("Output (or sorted) Heap after all elements deletion- ({0})", string.Join(",", heapArray.Where(x => x > -1)));
+        }
+
+        private static int[] Delete(int[] heapArray, int heapSize)
+        {
+            var elementToBeDeleted = heapArray[1]; // only root can be deleted and index starts from 1 not 0
+            heapArray[1] = heapArray[heapSize];
+            int i = 1; int j = 2 * i;
+
+            while(j < heapSize)
+            {
+                if(heapArray[j+1] > heapArray[j])
+                {
+                    j = j + 1;
+                }
+
+                if(heapArray[i] < heapArray[j])
+                {
+                    int temp = heapArray[j];
+                    heapArray[j] = heapArray[i];
+                    heapArray[i] = temp;
+                    i = j;
+                    j = 2 * i;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            heapArray[heapSize] = elementToBeDeleted; // this will make array sorted once all elements are deleted
+            return heapArray;
         }
 
         private static int[] InsertIntoMaxHeap(int[] heapArray, int indexOfInsertedElement)
