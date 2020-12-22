@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Sort.InsertionSort</StartupObject>
+    <StartupObject>Practice.Sort.SelectionSort</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -94,6 +94,7 @@
     <Compile Include="Recursion\TowerOfHanoi.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\InsertionSort.cs" />
+    <Compile Include="Sort\SelectionSort.cs" />
     <Compile Include="Stack\InfixToPostfix.cs" />
     <Compile Include="Stack\ParenthesisMatching.cs" />
     <Compile Include="Stack\StackUsingArray.cs" />
