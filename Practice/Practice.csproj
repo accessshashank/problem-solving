@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Sort.SelectionSort</StartupObject>
+    <StartupObject>Practice.Graphs.BFS</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -64,6 +64,7 @@
     <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\DeleteInBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\GenerateBSTUsingPreorder.cs" />
+    <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Heap\CreateHeap.cs" />
     <Compile Include="LinkedList\CheckLLIsSorted.cs" />
     <Compile Include="LinkedList\CircularDoublyLL.cs" />
