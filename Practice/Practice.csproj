@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.CountZeros</StartupObject>
+    <StartupObject>Practice.Recursion.Triangle</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -88,6 +88,7 @@
     <Compile Include="Queue\QueueUsingGeneric.cs" />
     <Compile Include="Queue\QueueUsingLL.cs" />
     <Compile Include="Queue\QueueUsingTwoStacks.cs" />
+    <Compile Include="Recursion\CheckArraySorted.cs" />
     <Compile Include="Recursion\CountZeros.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\nCr.cs" />
@@ -97,6 +98,7 @@
     <Compile Include="Recursion\ReverseANumber.cs" />
     <Compile Include="Recursion\SumOfDigits.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
+    <Compile Include="Recursion\Triangle.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\InsertionSort.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
