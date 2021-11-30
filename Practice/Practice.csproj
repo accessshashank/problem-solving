@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.Triangle</StartupObject>
+    <StartupObject>Practice.Recursion.Permutation</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,9 +93,13 @@
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\nCr.cs" />
     <Compile Include="Recursion\PalindromeUsingRecursion.cs" />
+    <Compile Include="Recursion\Permutation.cs" />
     <Compile Include="Recursion\Recursion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recursion\RemoveA.cs" />
     <Compile Include="Recursion\ReverseANumber.cs" />
+    <Compile Include="Recursion\Subsequence.cs" />
+    <Compile Include="Recursion\Subset.cs" />
     <Compile Include="Recursion\SumOfDigits.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
     <Compile Include="Recursion\Triangle.cs" />
