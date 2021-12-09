@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.LetterCombinationOfPhoneNumber</StartupObject>
+    <StartupObject>Practice.Recursion.SuDoKu</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -103,6 +103,7 @@
     <Compile Include="Recursion\ReverseANumber.cs" />
     <Compile Include="Recursion\Subsequence.cs" />
     <Compile Include="Recursion\Subset.cs" />
+    <Compile Include="Recursion\SuDoKu.cs" />
     <Compile Include="Recursion\SumOfDigits.cs" />
     <Compile Include="Recursion\TargetSum.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
