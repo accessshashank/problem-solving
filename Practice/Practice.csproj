@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.SuDoKu</StartupObject>
+    <StartupObject>Practice.Arrays.PeakOfMountainArray</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays\BinarySearch.cs" />
+    <Compile Include="Arrays\CeilingOfANumber.cs" />
     <Compile Include="Arrays\CheckForSortedArray.cs" />
     <Compile Include="Arrays\FindDuplicatesSortedArray.cs" />
     <Compile Include="Arrays\FindMultipleMissingElement.cs" />
@@ -55,10 +56,12 @@
     <Compile Include="Arrays\FindPairWithSumKSortedArray.cs" />
     <Compile Include="Arrays\FindPairWithSumKUnsortedArray.cs" />
     <Compile Include="Arrays\FindSingleMissingElement.cs" />
+    <Compile Include="Arrays\FirstAndLastIndexOfANumber.cs" />
     <Compile Include="Arrays\InsertElementSortedArray.cs" />
     <Compile Include="Arrays\LeftRotateArray.cs" />
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
+    <Compile Include="Arrays\PeakOfMountainArray.cs" />
     <Compile Include="Arrays\Union.cs" />
     <Compile Include="AVLTree\CreateAVLTree.cs" />
     <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
