@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Arrays.PeakOfMountainArray</StartupObject>
+    <StartupObject>Practice.Arrays.RotatedSortedArray</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -62,6 +62,7 @@
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\PeakOfMountainArray.cs" />
+    <Compile Include="Arrays\RotatedSortedArray.cs" />
     <Compile Include="Arrays\Union.cs" />
     <Compile Include="AVLTree\CreateAVLTree.cs" />
     <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
