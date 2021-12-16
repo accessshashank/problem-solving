@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Arrays.RotatedSortedArray</StartupObject>
+    <StartupObject>Practice.Arrays.BinarySearchSorted2DArray</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays\BinarySearch.cs" />
+    <Compile Include="Arrays\BinarySearchSorted2DArray.cs" />
     <Compile Include="Arrays\CeilingOfANumber.cs" />
     <Compile Include="Arrays\CheckForSortedArray.cs" />
     <Compile Include="Arrays\FindDuplicatesSortedArray.cs" />
