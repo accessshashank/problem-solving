@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Arrays.BinarySearchSorted2DArray</StartupObject>
+    <StartupObject>Practice.Sort.FindDuplicate</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -114,7 +114,11 @@
     <Compile Include="Recursion\TowerOfHanoi.cs" />
     <Compile Include="Recursion\Triangle.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
+    <Compile Include="Sort\CycleSort.cs" />
+    <Compile Include="Sort\FindDisappearedNumbers.cs" />
+    <Compile Include="Sort\FindDuplicate.cs" />
     <Compile Include="Sort\InsertionSort.cs" />
+    <Compile Include="Sort\MissingNumber.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
     <Compile Include="Stack\InfixToPostfix.cs" />
     <Compile Include="Stack\ParenthesisMatching.cs" />
