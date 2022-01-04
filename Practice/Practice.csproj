@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Sort.FindDuplicate</StartupObject>
+    <StartupObject>Practice.LinkedList.HappyNumber</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -78,6 +78,7 @@
     <Compile Include="LinkedList\ConcatenateLL.cs" />
     <Compile Include="LinkedList\DeletionOfANode.cs" />
     <Compile Include="LinkedList\DoublyLL.cs" />
+    <Compile Include="LinkedList\HappyNumber.cs" />
     <Compile Include="LinkedList\InsertIntoSortedLL.cs" />
     <Compile Include="LinkedList\IntersectionOfTwoLL.cs" />
     <Compile Include="LinkedList\LLOperations.cs" />
@@ -87,6 +88,8 @@
     <Compile Include="LinkedList\RemoveDuplicatesInSortedLL.cs" />
     <Compile Include="LinkedList\ReverseDoublyLL.cs" />
     <Compile Include="LinkedList\ReverseLL.cs" />
+    <Compile Include="Misc\MagicNumber.cs" />
+    <Compile Include="Misc\Power.cs" />
     <Compile Include="Misc\ProductOfAllExceptSelfInArray.cs" />
     <Compile Include="Misc\SquaresInSortedOrder.cs" />
     <Compile Include="Queue\CircularQueue.cs" />
@@ -113,6 +116,7 @@
     <Compile Include="Recursion\TargetSum.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
     <Compile Include="Recursion\Triangle.cs" />
+    <Compile Include="Revision.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\CycleSort.cs" />
     <Compile Include="Sort\FindDisappearedNumbers.cs" />

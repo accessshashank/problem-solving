@@ -57,6 +57,10 @@ namespace Practice.LinkedList
             ll = InsertNodeAtNthPosition(ll);
             LLHelper.Display(ll.Head);
             Console.WriteLine();
+
+            ll = InsertNodeAtNthPositionRecursive(ll);
+            LLHelper.Display(ll.Head);
+            Console.WriteLine();
         }
 
         private static LinkedList InsertNodeAtNthPosition(LinkedList ll)
@@ -75,6 +79,30 @@ namespace Practice.LinkedList
             temp.Next = node;
 
             return ll;
+        }
+
+        private static LinkedList InsertNodeAtNthPositionRecursive(LinkedList ll)
+        {
+            int position = 3;
+            Console.WriteLine("Inserting node 1200 at 4th position recursively");
+             Helper(ll, ll.Head, position, 1200);
+
+            return ll;
+        }
+
+        private static void Helper(LinkedList ll, Node current, int position, int value)
+        {
+            if(position == 0)
+            {
+                Node node = new Node();
+                node.Value = value;
+                node.Next = current.Next;
+                current.Next = node;
+                // return node;
+                return;
+            }
+
+            Helper(ll, current.Next, position - 1, value);
         }
 
         private static LinkedList InsertNodeAtBegining(LinkedList ll)
