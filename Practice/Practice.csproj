@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.LinkedList.HappyNumber</StartupObject>
+    <StartupObject>Practice.Sort.ChopstickPairs</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -64,6 +64,9 @@
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\PeakOfMountainArray.cs" />
     <Compile Include="Arrays\RotatedSortedArray.cs" />
+    <Compile Include="Arrays\SortedPairSum.cs" />
+    <Compile Include="Arrays\SubArraySumUsingKadanesAlgorithm.cs" />
+    <Compile Include="Arrays\SubArraySumUsingPrefixSums.cs" />
     <Compile Include="Arrays\Union.cs" />
     <Compile Include="AVLTree\CreateAVLTree.cs" />
     <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
@@ -118,6 +121,7 @@
     <Compile Include="Recursion\Triangle.cs" />
     <Compile Include="Revision.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
+    <Compile Include="Sort\ChopstickPairs.cs" />
     <Compile Include="Sort\CycleSort.cs" />
     <Compile Include="Sort\FindDisappearedNumbers.cs" />
     <Compile Include="Sort\FindDuplicate.cs" />
