@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Strings.RunLengthEncoding</StartupObject>
+    <StartupObject>Practice.Recursion.LastOccurenceInArray</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -61,11 +61,13 @@
     <Compile Include="Arrays\FirstAndLastIndexOfANumber.cs" />
     <Compile Include="Arrays\InsertElementSortedArray.cs" />
     <Compile Include="Arrays\LeftRotateArray.cs" />
+    <Compile Include="Arrays\MangoTree.cs" />
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
     <Compile Include="Arrays\PeakOfMountainArray.cs" />
     <Compile Include="Arrays\RotatedSortedArray.cs" />
     <Compile Include="Arrays\SortedPairSum.cs" />
+    <Compile Include="Arrays\StaircaseSearch2DArray.cs" />
     <Compile Include="Arrays\SubArraySumUsingKadanesAlgorithm.cs" />
     <Compile Include="Arrays\SubArraySumUsingPrefixSums.cs" />
     <Compile Include="Arrays\Union.cs" />
@@ -73,6 +75,10 @@
     <Compile Include="BinarySearchTree\CreateBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\DeleteInBinarySearchTree.cs" />
     <Compile Include="BinarySearchTree\GenerateBSTUsingPreorder.cs" />
+    <Compile Include="Bitwise\BitwiseOperations.cs" />
+    <Compile Include="Bitwise\EarthLevel.cs" />
+    <Compile Include="Bitwise\FindNonDuplicateInArray.cs" />
+    <Compile Include="Bitwise\ModuloExponentiation.cs" />
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\DFS.cs" />
     <Compile Include="Heap\CreateHeap.cs" />
@@ -103,6 +109,7 @@
     <Compile Include="Recursion\CheckArraySorted.cs" />
     <Compile Include="Recursion\CountZeros.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
+    <Compile Include="Recursion\LastOccurenceInArray.cs" />
     <Compile Include="Recursion\LetterCombinationOfPhoneNumber.cs" />
     <Compile Include="Recursion\Maze.cs" />
     <Compile Include="Recursion\nCr.cs" />
