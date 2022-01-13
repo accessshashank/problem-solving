@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.LastOccurenceInArray</StartupObject>
+    <StartupObject>Practice.Recursion.SuDoKu</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -108,12 +108,14 @@
     <Compile Include="Queue\QueueUsingTwoStacks.cs" />
     <Compile Include="Recursion\CheckArraySorted.cs" />
     <Compile Include="Recursion\CountZeros.cs" />
+    <Compile Include="Recursion\FastPower.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\LastOccurenceInArray.cs" />
     <Compile Include="Recursion\LetterCombinationOfPhoneNumber.cs" />
     <Compile Include="Recursion\Maze.cs" />
     <Compile Include="Recursion\nCr.cs" />
     <Compile Include="Recursion\NQueens.cs" />
+    <Compile Include="Recursion\NumberSpell.cs" />
     <Compile Include="Recursion\PalindromeUsingRecursion.cs" />
     <Compile Include="Recursion\Permutation.cs" />
     <Compile Include="Recursion\Recursion.cs" />
@@ -125,6 +127,7 @@
     <Compile Include="Recursion\SuDoKu.cs" />
     <Compile Include="Recursion\SumOfDigits.cs" />
     <Compile Include="Recursion\TargetSum.cs" />
+    <Compile Include="Recursion\TileProblem.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
     <Compile Include="Recursion\Triangle.cs" />
     <Compile Include="Revision.cs" />

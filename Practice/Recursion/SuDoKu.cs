@@ -22,7 +22,12 @@ namespace Practice.Recursion
             {0, 0, 0, 0, 8, 0, 0, 7, 9 }
             };
 
-            solve(board);
+            if (solve(board))
+                Display(board);
+            else
+            {
+                Console.WriteLine("Cant solve");
+            }
 
             
         }
@@ -59,7 +64,7 @@ namespace Practice.Recursion
                 if (isSolved == false) break;
             }
 
-            Console.WriteLine("Row {0} Col {1} is empty", row, col);
+            //Console.WriteLine("Row {0} Col {1} is empty", row, col);
 
             if (isSolved == true) return true;
 
@@ -67,23 +72,26 @@ namespace Practice.Recursion
             {
                 if (IsSafe(board, row, col, num))
                 {
-                    Console.WriteLine("Applied number {0} to Row {1} Col {2} is empty", num, row, col);
+                    //Console.WriteLine("Applied number {0} to Row {1} Col {2} is empty", num, row, col);
                     board[row, col] = num;
 
                     if (solve(board))
                     {
-                        Display(board);
-                        Console.WriteLine("--------------------");
+                       //Display(board);
+                        //Console.WriteLine("--------------------");
                         return true;
                     }
+                    /*
                     else
                     {
                         board[row, col] = 0;
                         Console.WriteLine("Row {0} Col {1} is reverted", row, col);
                     }
+                    */
                 }
             }
 
+            board[row, col] = 0;
             return false;
 
         }
