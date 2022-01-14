@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.SuDoKu</StartupObject>
+    <StartupObject>Practice.Recursion.RatAndMice</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -118,6 +118,7 @@
     <Compile Include="Recursion\NumberSpell.cs" />
     <Compile Include="Recursion\PalindromeUsingRecursion.cs" />
     <Compile Include="Recursion\Permutation.cs" />
+    <Compile Include="Recursion\RatAndMice.cs" />
     <Compile Include="Recursion\Recursion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursion\RemoveA.cs" />
