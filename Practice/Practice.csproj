@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.RatAndMice</StartupObject>
+    <StartupObject>Practice.Recursion.Subsets</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -131,6 +131,7 @@
     <Compile Include="Recursion\TileProblem.cs" />
     <Compile Include="Recursion\TowerOfHanoi.cs" />
     <Compile Include="Recursion\Triangle.cs" />
+    <Compile Include="Recursion\WordBreak.cs" />
     <Compile Include="Revision.cs" />
     <Compile Include="Sort\BubbleSort.cs" />
     <Compile Include="Sort\ChopstickPairs.cs" />
