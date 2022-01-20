@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Trees.KthLevelOfTree</StartupObject>
+    <StartupObject>Practice.Trees.HeightOfTree</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -168,6 +168,7 @@
     <Compile Include="Trees\InvertBinaryTree.cs" />
     <Compile Include="Trees\KthLevelOfTree.cs" />
     <Compile Include="Trees\LevelOrderTraversal.cs" />
+    <Compile Include="Trees\SumOfNodes.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
