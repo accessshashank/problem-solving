@@ -189,6 +189,52 @@ namespace Practice.Trees
 
             return root;
         }
+
+        public static TreeNode<int> InitializeBinaryTreeV2()
+        {
+            var queue = new Queue<TreeNode<int>>();
+            int value = 0;
+            Console.Write("Enter value of root node : ");
+            value = int.Parse(Console.ReadLine());
+            TreeNode<int> root = new TreeNode<int>();
+            root.Value = value;
+            root.Left = null;
+            root.Right = null;
+
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                var p = queue.Dequeue();
+
+                Console.Write("Enter value of left child or node ({0}) : ", p.Value);
+                value = int.Parse(Console.ReadLine());
+                if (value != -1)
+                {
+                    TreeNode<int> left = new TreeNode<int>();
+                    left.Value = value;
+                    left.Left = null;
+                    left.Right = null;
+                    p.Left = left;
+                    queue.Enqueue(left);
+                }
+
+                Console.Write("Enter value of right child or node ({0}) : ", p.Value);
+                value = int.Parse(Console.ReadLine());
+                if (value != -1)
+                {
+                    TreeNode<int> right = new TreeNode<int>();
+                    right.Value = value;
+                    right.Left = null;
+                    right.Right = null;
+                    p.Right = right;
+                    queue.Enqueue(right);
+                }
+
+            }
+
+            return root;
+        }
     }
 
     public class TreeNode<T>

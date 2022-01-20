@@ -12,10 +12,46 @@ namespace Practice.Trees
         static void Main(string[] args)
         {
             Console.WriteLine("Creating Binary Tree ... !");
-            var root = BinaryTreeHelper.InitializeBinaryTree();
+            var root = BinaryTreeHelper.InitializeBinaryTreeV2();
             Console.WriteLine("Level Traversal ... !");
             LevelTraversal(root);
             Console.WriteLine();
+            LevelOrderDisplay(root);
+            Console.WriteLine();
+        }
+
+        private static void LevelOrderDisplay(TreeNode<int> root)
+        {
+            var queue = new Queue<TreeNode<int>>();
+            var currentNode = root;
+            queue.Enqueue(root);
+            queue.Enqueue(null);
+            while(queue.Count > 0)
+            {
+                var node = queue.Dequeue();
+                if(node == null && queue.Count == 0)
+                {
+                    Console.WriteLine();
+                    return;
+                }
+                else if (node == null)
+                {
+                    Console.WriteLine();
+                    queue.Enqueue(null);
+                    continue;
+                }
+                Console.Write(node.Value + " ");
+                if(node.Left != null)
+                {
+                    queue.Enqueue(node.Left);
+                }
+
+                if(node.Right != null)
+                {
+                    queue.Enqueue(node.Right);
+                }
+
+            }
         }
 
         private static void LevelTraversal(TreeNode<int> root)

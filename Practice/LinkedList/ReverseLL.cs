@@ -101,5 +101,43 @@ namespace Practice.LinkedList
 
             return ll;
         }
+
+        private static void ReverseLL1(LinkedList ll)
+        {
+            Node r = null;
+            Node q = null;
+            Node p = ll.Head;
+
+            while(p != null)
+            {
+                r = q;
+                q = p;
+                p = p.Next;
+                q.Next = r;
+            }
+
+            ll.Head = q;
+        }
+
+        private static void ReverseLLRev(LinkedList ll)
+        {
+            Node previous = null;
+            Node current = ll.Head;
+
+            ReverseRec(previous, current, ll);
+        }
+
+        private static void ReverseRec(Node previous, Node current, LinkedList ll)
+        {
+            if(current != null)
+            {
+                ReverseRec(current, current.Next, ll);
+                current.Next = previous;
+            }
+            else
+            {
+                ll.Head = previous;
+            }
+        }
     }
 }

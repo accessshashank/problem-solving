@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.WordSearch</StartupObject>
+    <StartupObject>Practice.Trees.KthLevelOfTree</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -82,6 +82,7 @@
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\DFS.cs" />
     <Compile Include="Heap\CreateHeap.cs" />
+    <Compile Include="LinkedList\AlternateMerge.cs" />
     <Compile Include="LinkedList\CheckLLIsSorted.cs" />
     <Compile Include="LinkedList\CircularDoublyLL.cs" />
     <Compile Include="LinkedList\CircularLL.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="LinkedList\HappyNumber.cs" />
     <Compile Include="LinkedList\InsertIntoSortedLL.cs" />
     <Compile Include="LinkedList\IntersectionOfTwoLL.cs" />
+    <Compile Include="LinkedList\KthElementFromLast.cs" />
     <Compile Include="LinkedList\LLOperations.cs" />
     <Compile Include="LinkedList\LoopInLinkedList.cs" />
     <Compile Include="LinkedList\MergeTwoSortedLL.cs" />
@@ -143,11 +145,18 @@
     <Compile Include="Sort\InsertionSort.cs" />
     <Compile Include="Sort\MissingNumber.cs" />
     <Compile Include="Sort\SelectionSort.cs" />
+    <Compile Include="Stack\DuplicateParenthesis.cs" />
     <Compile Include="Stack\InfixToPostfix.cs" />
+    <Compile Include="Stack\InsertAtBottom.cs" />
+    <Compile Include="Stack\MaxAreaHistogram.cs" />
+    <Compile Include="Stack\NextGreaterElement.cs" />
     <Compile Include="Stack\ParenthesisMatching.cs" />
+    <Compile Include="Stack\ReverseNumber.cs" />
+    <Compile Include="Stack\ReverseRecursive.cs" />
     <Compile Include="Stack\StackUsingArray.cs" />
     <Compile Include="Stack\StackUsingGeneric.cs" />
     <Compile Include="Stack\StackUsingLL.cs" />
+    <Compile Include="Stack\StockSpan.cs" />
     <Compile Include="Strings\Anagrams.cs" />
     <Compile Include="Strings\Displacement.cs" />
     <Compile Include="Strings\DuplicateCharsInString.cs" />
@@ -155,7 +164,9 @@
     <Compile Include="Strings\RunLengthEncoding.cs" />
     <Compile Include="Trees\CountNodesInBinaryTree.cs" />
     <Compile Include="Trees\CreateBinaryTree.cs" />
+    <Compile Include="Trees\HeightOfTree.cs" />
     <Compile Include="Trees\InvertBinaryTree.cs" />
+    <Compile Include="Trees\KthLevelOfTree.cs" />
     <Compile Include="Trees\LevelOrderTraversal.cs" />
   </ItemGroup>
   <ItemGroup>
