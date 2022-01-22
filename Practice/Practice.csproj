@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Trees.HeightOfTree</StartupObject>
+    <StartupObject>Practice.Trees.SymmetricTree</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -164,11 +164,14 @@
     <Compile Include="Strings\RunLengthEncoding.cs" />
     <Compile Include="Trees\CountNodesInBinaryTree.cs" />
     <Compile Include="Trees\CreateBinaryTree.cs" />
+    <Compile Include="Trees\DiameterOfTree.cs" />
     <Compile Include="Trees\HeightOfTree.cs" />
     <Compile Include="Trees\InvertBinaryTree.cs" />
     <Compile Include="Trees\KthLevelOfTree.cs" />
     <Compile Include="Trees\LevelOrderTraversal.cs" />
+    <Compile Include="Trees\MinDepth.cs" />
     <Compile Include="Trees\SumOfNodes.cs" />
+    <Compile Include="Trees\SymmetricTree.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
