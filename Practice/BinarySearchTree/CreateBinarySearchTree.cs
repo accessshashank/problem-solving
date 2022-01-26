@@ -41,6 +41,17 @@ namespace Practice.BinarySearchTree
             else return SearchRecursive(node.Left, key);
         }
 
+        private static bool SearchRecursiveV2(TreeNode node, int key)
+        {
+            if (node == null)
+                return false;
+
+            if (node.Value == key) return true;
+
+            if (key > node.Value) return SearchRecursiveV2(node.Right, key);
+            else return SearchRecursiveV2(node.Left, key);
+        }
+
         private static bool SearchIterative(TreeNode root, int key)
         {
             var p = root;
@@ -50,6 +61,30 @@ namespace Practice.BinarySearchTree
                 if (key > p.Value) p = p.Right;
                 else p = p.Left;
             }
+            return false;
+        }
+
+        private static bool SearchIterativeV2(TreeNode root, int key)
+        { 
+
+            TreeNode temp = root;
+
+            while(temp != null)
+            {
+                if(temp.Value == key)
+                {
+                    return true;
+                }
+                else if(key > temp.Value)
+                {
+                    temp = temp.Right;
+                }
+                else
+                {
+                    temp = temp.Left;
+                }
+            }
+
             return false;
         }
 
@@ -105,6 +140,27 @@ namespace Practice.BinarySearchTree
             return node;
         }
 
+        public static TreeNode InsertRecursiveV2(TreeNode node, int key)
+        {
+            if(node == null)
+            {
+                TreeNode n = new TreeNode();
+                n.Value = key;
+                return n;
+            }
+
+            if(key > node.Value)
+            {
+                node.Right = InsertRecursiveV2(node.Right, key);
+            }
+            else
+            {
+                node.Left = InsertRecursiveV2(node.Left, key);
+            }
+
+            return node;
+        }
+
         public static void InsertIterative(TreeNode root, int key)
         {
             TreeNode p = root;
@@ -133,6 +189,39 @@ namespace Practice.BinarySearchTree
                 var node = new TreeNode();
                 node.Value = key;
                 q.Left = node;
+            }
+        }
+
+        public static void InsertIterativeV2(TreeNode root, int key)
+        {
+            TreeNode p = root;
+            TreeNode q = null;
+
+            while(p != null)
+            {
+                q = p;
+
+                if(key > p.Value)
+                {
+                    p = p.Right;
+                }
+                else
+                {
+                    p = p.Left;
+                }
+            }
+
+            if(key > q.Value)
+            {
+                TreeNode n = new TreeNode();
+                n.Value = key;
+                q.Right = n;
+            }
+            else
+            {
+                TreeNode n = new TreeNode();
+                n.Value = key;
+                q.Left = n;
             }
         }
     }

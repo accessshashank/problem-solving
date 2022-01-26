@@ -69,6 +69,37 @@ namespace Practice.Heap
             return heapArray;
         }
 
+        private static int[] DeleteV2(int[] heapArray, int heapSize)
+        {
+            int elementToDelete = heapArray[1];
+            heapArray[1] = heapArray[heapSize];
+            int i = 1; int j = 2 * i;
+
+            while(j < heapSize)
+            {
+                if(heapArray[j+1] > heapArray[j])
+                {
+                    j = j + 1;
+                }
+
+                if(heapArray[i] < heapArray[j])
+                {
+                    int temp = heapArray[i];
+                    heapArray[i] = heapArray[j];
+                    heapArray[j] = temp;
+                    i = j;
+                    j = 2 * i;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            heapArray[heapSize] = elementToDelete;
+            return heapArray;
+        }
+
         private static int[] InsertIntoMaxHeap(int[] heapArray, int indexOfInsertedElement)
         {
             if (indexOfInsertedElement == 1) return heapArray;
@@ -80,6 +111,23 @@ namespace Practice.Heap
                 heapArray[i] = heapArray[i / 2];
                 i /= 2;
             }
+            heapArray[i] = temp;
+            return heapArray;
+        }
+
+        private static int[] InsertIntoMaxHeapV2(int[] heapArray, int indexOfInsertedElement)
+        {
+            if (indexOfInsertedElement == 1) return heapArray;
+
+            int temp = heapArray[indexOfInsertedElement];
+            int i = indexOfInsertedElement;
+
+            while(i > 1 && temp > heapArray[i/2])
+            {
+                heapArray[i] = heapArray[i / 2];
+                i = i / 2;
+            }
+
             heapArray[i] = temp;
             return heapArray;
         }

@@ -98,6 +98,8 @@ namespace Practice.Trees
             }
         }
 
+      
+
         // There is a trick applied with -ve numbers, make sure tree nodes do not have -ve number anytime.
         // when both left and right subtree traversal is complete then popped node will have -ve value, so time to print
         private static void PostOrderIterative(TreeNode<int> node)
@@ -224,6 +226,52 @@ namespace Practice.Trees
                 if (value != -1)
                 {
                     TreeNode<int> right = new TreeNode<int>();
+                    right.Value = value;
+                    right.Left = null;
+                    right.Right = null;
+                    p.Right = right;
+                    queue.Enqueue(right);
+                }
+
+            }
+
+            return root;
+        }
+
+        public static TreeNode<string> InitializeBinaryTreeV3()
+        {
+            var queue = new Queue<TreeNode<string>>();
+            string value = "";
+            Console.Write("Enter value of root node : ");
+            value = Console.ReadLine();
+            TreeNode<string> root = new TreeNode<string>();
+            root.Value = value;
+            root.Left = null;
+            root.Right = null;
+
+            queue.Enqueue(root);
+
+            while (queue.Count > 0)
+            {
+                var p = queue.Dequeue();
+
+                Console.Write("Enter value of left child or node ({0}) : ", p.Value);
+                value = Console.ReadLine();
+                if (value != "-1")
+                {
+                    TreeNode<string> left = new TreeNode<string>();
+                    left.Value = value;
+                    left.Left = null;
+                    left.Right = null;
+                    p.Left = left;
+                    queue.Enqueue(left);
+                }
+
+                Console.Write("Enter value of right child or node ({0}) : ", p.Value);
+                value = Console.ReadLine();
+                if (value != "-1")
+                {
+                    TreeNode<string> right = new TreeNode<string>();
                     right.Value = value;
                     right.Left = null;
                     right.Right = null;
