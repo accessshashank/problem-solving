@@ -114,5 +114,54 @@ namespace Practice.Graphs
                 }
             }
         }
+
+        private static void PerformBFSUsingAdjacencyMatrixV2(int u, int[,] vertices, int[] visit)
+        {
+            Console.WriteLine("BFS using adjacency matrix V2 ");
+            Console.Write(u + "->");
+            visit[u] = 1;
+            var queue = new Queue<int>();
+            queue.Enqueue(u);
+
+            while(queue.Any())
+            {
+                u = queue.Dequeue();
+                for(int v = 1; v < 8; v++)
+                {
+                    if(vertices[u,v] == 1 && visit[v] == 0)
+                    {
+                        Console.Write(v + "->");
+                        visit[v] = 1;
+                        queue.Enqueue(v);
+                    }
+                }
+            }
+        }
+
+        private static void PerformBFSUsingAdjacencyListV2(int u, LinkedList<int>[] arrayVertices, int[] visit)
+        {
+            Console.WriteLine("BFS using adjacency list V2");
+            Console.Write(u + "->");
+            visit[u] = 1;
+            var queue = new Queue<int>();
+            queue.Enqueue(u);
+
+            while(queue.Any())
+            {
+                u = queue.Dequeue();
+                var allVertices = arrayVertices[u];
+                var enumerator = allVertices.GetEnumerator();
+
+                while(enumerator.MoveNext())
+                {
+                    var v = enumerator.Current;
+                    if(visit[v] == 0)
+                    {
+                        visit[v] = 1;
+                        queue.Enqueue(v);
+                    }
+                }
+            }
+        }
     }
 }

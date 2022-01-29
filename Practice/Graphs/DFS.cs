@@ -84,6 +84,22 @@ namespace Practice.Graphs
             }
         }
 
+        private static void PerformDFSUsingAdjacencyListV2(int u, LinkedList<int>[] arrayVertices, int[] visit)
+        {
+           if(visit[u] == 0)
+            {
+                Console.Write(u + "->");
+                visit[u] = 1;
+
+                var allVertices = arrayVertices[u];
+                var enumerator = allVertices.GetEnumerator();
+                while (enumerator.MoveNext())
+                {
+                    PerformDFSUsingAdjacencyListV2(enumerator.Current, arrayVertices, visit);
+                }
+            }
+        }
+
         private static void PerformDFSUsingAdjacencyMatrix(int u, int[,] vertices, int[] visit)
         {
             if(visit[u] == 0)
@@ -95,6 +111,23 @@ namespace Practice.Graphs
                     if(vertices[u,v] == 1 && visit[v] == 0)
                     {
                         PerformDFSUsingAdjacencyMatrix(v, vertices, visit);
+                    }
+                }
+            }
+        }
+
+        private static void PerformDFSUsingAdjacencyMatrixV2(int u, int[,] vertices, int[] visit)
+        {
+            if(visit[u] == 0)
+            {
+                Console.Write(u + "->");
+                visit[u] = 1;
+
+                for(int v =1; v<8; v++)
+                {
+                    if(vertices[u,v] == 1 && visit[v] == 0)
+                    {
+                        PerformDFSUsingAdjacencyMatrixV2(v, vertices, visit);
                     }
                 }
             }
