@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.TrieDemo.TrieDemo</StartupObject>
+    <StartupObject>Practice.GreedyAlgos.FractionalKnapsack</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -85,6 +85,9 @@
     <Compile Include="Bitwise\ModuloExponentiation.cs" />
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\DFS.cs" />
+    <Compile Include="GreedyAlgos\ActivitySelection.cs" />
+    <Compile Include="GreedyAlgos\CoinChange.cs" />
+    <Compile Include="GreedyAlgos\FractionalKnapsack.cs" />
     <Compile Include="Heap\CreateHeap.cs" />
     <Compile Include="Heap\MaximumProduct.cs" />
     <Compile Include="Heap\WeakestRow.cs" />
