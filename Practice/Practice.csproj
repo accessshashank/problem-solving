@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.GreedyAlgos.FractionalKnapsack</StartupObject>
+    <StartupObject>Practice.DivideAndConquer.ZeroOneKnapsack</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -83,6 +83,9 @@
     <Compile Include="Bitwise\EarthLevel.cs" />
     <Compile Include="Bitwise\FindNonDuplicateInArray.cs" />
     <Compile Include="Bitwise\ModuloExponentiation.cs" />
+    <Compile Include="DivideAndConquer\ConvertOneStringToAnother.cs" />
+    <Compile Include="DivideAndConquer\HouseThief.cs" />
+    <Compile Include="DivideAndConquer\ZeroOneKnapsack.cs" />
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\DFS.cs" />
     <Compile Include="GreedyAlgos\ActivitySelection.cs" />
@@ -181,6 +184,7 @@
     <Compile Include="Trees\KthLevelOfTree.cs" />
     <Compile Include="Trees\LevelOrderTraversal.cs" />
     <Compile Include="Trees\MinDepth.cs" />
+    <Compile Include="Trees\OddNodes.cs" />
     <Compile Include="Trees\RemoveHalf.cs" />
     <Compile Include="Trees\SumOfNodes.cs" />
     <Compile Include="Trees\SymmetricTree.cs" />
