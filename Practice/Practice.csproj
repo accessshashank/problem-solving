@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DivideAndConquer.LongestPalindromicSubsequence</StartupObject>
+    <StartupObject>Practice.DivideAndConquer.NumberOfPathsToLastCellWithGivenCost</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -87,6 +87,9 @@
     <Compile Include="DivideAndConquer\HouseThief.cs" />
     <Compile Include="DivideAndConquer\LongestCommonSubsequence.cs" />
     <Compile Include="DivideAndConquer\LongestPalindromicSubsequence.cs" />
+    <Compile Include="DivideAndConquer\LongestPalindromicSubstring.cs" />
+    <Compile Include="DivideAndConquer\MinCostToReachLastCellIn2DArray.cs" />
+    <Compile Include="DivideAndConquer\NumberOfPathsToLastCellWithGivenCost.cs" />
     <Compile Include="DivideAndConquer\ZeroOneKnapsack.cs" />
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\DFS.cs" />
