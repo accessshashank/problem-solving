@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DivideAndConquer.NumberOfPathsToLastCellWithGivenCost</StartupObject>
+    <StartupObject>Practice.DP.ClimbingStairs</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -91,6 +91,8 @@
     <Compile Include="DivideAndConquer\MinCostToReachLastCellIn2DArray.cs" />
     <Compile Include="DivideAndConquer\NumberOfPathsToLastCellWithGivenCost.cs" />
     <Compile Include="DivideAndConquer\ZeroOneKnapsack.cs" />
+    <Compile Include="DP\ClimbingStairs.cs" />
+    <Compile Include="DP\Fibonacci.cs" />
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\DFS.cs" />
     <Compile Include="GreedyAlgos\ActivitySelection.cs" />
