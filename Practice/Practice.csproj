@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.NinjaTraining</StartupObject>
+    <StartupObject>Practice.DP.GridUniquePaths</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -94,6 +94,7 @@
     <Compile Include="DP\ClimbingStairs.cs" />
     <Compile Include="DP\Fibonacci.cs" />
     <Compile Include="DP\FrogJump.cs" />
+    <Compile Include="DP\GridUniquePaths.cs" />
     <Compile Include="DP\MaximumSumOfNonAdjacentElement.cs" />
     <Compile Include="DP\NinjaTraining.cs" />
     <Compile Include="Graphs\BFS.cs" />
