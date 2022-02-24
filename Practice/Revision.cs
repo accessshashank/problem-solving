@@ -14,7 +14,147 @@ namespace Practice
             //Perm("", str);
             //Subsets("", str);
             //NQueens();
-            SuDoKu();
+            //SuDoKu();
+            //Console.WriteLine(IsBalancedParenthesis("((a+b)*(c+d)))"));
+            Console.WriteLine(InfixToPostfix("3*5+6/2-4"));
+            Console.WriteLine(EvalPostfix(InfixToPostfix("3*5+6/2-4")));
+        }
+
+        private static int EvalPostfix(string expression)
+        {
+            var stack = new Stack<int>();
+
+            foreach (var ch in expression.ToCharArray())
+            {
+                if(IsOperand(ch))
+                {
+                    stack.Push(int.Parse(ch.ToString()));
+                }
+                else
+                {
+                    switch (ch)
+                    {
+                        case '+':
+                            {
+                                var right = stack.Pop();
+                                var left = stack.Pop();
+                                var val = left + right;
+                                stack.Push(val);
+                            }
+
+                            break;
+                        case '-':
+                            {
+                                var right = stack.Pop();
+                                var left = stack.Pop();
+                                var val = left - right;
+                                stack.Push(val);
+                            }
+
+                            break;
+                        case '*':
+                            {
+                                var right = stack.Pop();
+                                var left = stack.Pop();
+                                var val = left * right;
+                                stack.Push(val);
+                            }
+
+                            break;
+                        case '/':
+                            {
+                                var right = stack.Pop();
+                                var left = stack.Pop();
+                                var val = left / right;
+                                stack.Push(val);
+                            }
+
+                            break;
+                    }
+
+                }
+               
+            }
+            return stack.Pop();
+        }
+
+        private static bool IsBalancedParenthesis(string str)
+        {
+            var stack = new Stack<char>();
+
+            foreach(var ch in str.ToCharArray())
+            {
+                if(ch == '(')
+                {
+                    stack.Push(ch);
+                }
+                else if(ch==')')
+                {
+                    if (stack.Count == 0) return false;
+                    stack.Pop();
+                }
+            }
+
+            if (stack.Count == 0) return true;
+            else return false;
+        }
+
+        private static string InfixToPostfix(string expression)
+        {
+            string postfix = "";
+            var stack = new Stack<char>();
+
+            foreach (var ch in expression.ToArray())
+            {
+                if(IsOperand(ch))
+                {
+                    postfix += ch;
+                }
+                else
+                {
+                    if (stack.Count == 0)
+                    {
+                        stack.Push(ch);
+                    }
+                    else
+                    {
+                        var precedence = Precedence(ch);
+                        while (stack.Count > 0 && Precedence(stack.Peek()) >= precedence)
+                        {
+                            postfix += stack.Pop();
+                        }
+                        stack.Push(ch);
+                    }
+                }
+            }
+
+            while(stack.Count > 0)
+            {
+                postfix += stack.Pop();
+            }
+            return postfix;
+        }
+
+        private static bool IsOperand(char ch)
+        {
+            if(ch == '+' || ch=='-' || ch=='*' || ch=='/')
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private static int Precedence(char ch)
+        {
+            if(ch == '+' || ch=='-')
+            {
+                return 1;
+            }
+            if(ch=='*' || ch=='/')
+            {
+                return 2;
+            }
+            return 0;
         }
 
         private static void SuDoKu()
