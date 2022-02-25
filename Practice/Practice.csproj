@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Revision</StartupObject>
+    <StartupObject>Practice.DP.SubsequenceSumEqualsTarget</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -91,13 +91,16 @@
     <Compile Include="DivideAndConquer\MinCostToReachLastCellIn2DArray.cs" />
     <Compile Include="DivideAndConquer\NumberOfPathsToLastCellWithGivenCost.cs" />
     <Compile Include="DivideAndConquer\ZeroOneKnapsack.cs" />
+    <Compile Include="DP\CherryPickUP.cs" />
     <Compile Include="DP\ClimbingStairs.cs" />
     <Compile Include="DP\Fibonacci.cs" />
     <Compile Include="DP\FrogJump.cs" />
     <Compile Include="DP\GridUniquePaths.cs" />
     <Compile Include="DP\MaximumSumOfNonAdjacentElement.cs" />
+    <Compile Include="DP\MaxPathSumVariableStartEndPoints.cs" />
     <Compile Include="DP\MinPathSum.cs" />
     <Compile Include="DP\NinjaTraining.cs" />
+    <Compile Include="DP\SubsequenceSumEqualsTarget.cs" />
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\DFS.cs" />
     <Compile Include="GreedyAlgos\ActivitySelection.cs" />
