@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.SubsequenceSumEqualsTarget</StartupObject>
+    <StartupObject>Practice.Graphs.CountNoOfIslands</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -102,6 +102,7 @@
     <Compile Include="DP\NinjaTraining.cs" />
     <Compile Include="DP\SubsequenceSumEqualsTarget.cs" />
     <Compile Include="Graphs\BFS.cs" />
+    <Compile Include="Graphs\CountNoOfIslands.cs" />
     <Compile Include="Graphs\DFS.cs" />
     <Compile Include="GreedyAlgos\ActivitySelection.cs" />
     <Compile Include="GreedyAlgos\CoinChange.cs" />
