@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Graphs.CountNoOfIslands</StartupObject>
+    <StartupObject>Practice.Arrays.PartitionArrayMaxDiffK</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -64,6 +64,7 @@
     <Compile Include="Arrays\MangoTree.cs" />
     <Compile Include="Arrays\MergeSortedArrays.cs" />
     <Compile Include="Arrays\NegativeOnLeftSide.cs" />
+    <Compile Include="Arrays\PartitionArrayMaxDiffK.cs" />
     <Compile Include="Arrays\PeakOfMountainArray.cs" />
     <Compile Include="Arrays\RotatedSortedArray.cs" />
     <Compile Include="Arrays\SortedPairSum.cs" />
