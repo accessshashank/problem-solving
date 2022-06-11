@@ -10,14 +10,152 @@ namespace Practice
     {
         static void Main(string[] args)
         {
-            string str = "abcd";
+            //string str = "abcd";
             //Perm("", str);
             //Subsets("", str);
             //NQueens();
             //SuDoKu();
             //Console.WriteLine(IsBalancedParenthesis("((a+b)*(c+d)))"));
-            Console.WriteLine(InfixToPostfix("3*5+6/2-4"));
-            Console.WriteLine(EvalPostfix(InfixToPostfix("3*5+6/2-4")));
+            //Console.WriteLine(InfixToPostfix("3*5+6/2-4"));
+            //Console.WriteLine(EvalPostfix(InfixToPostfix("3*5+6/2-4")));
+
+            bool[] visited = new bool[] { false, false, false, false, false, false, false};
+            var graphAL = new Dictionary<int, int[]>() { 
+                {1, new int[] {2, 3 } },
+                {2, new int[] {4 } },
+                {3, new int[] {5 } },
+                {4, new int[] {6 } },
+                {5, new int[] { } },
+                {6, new int[] { }}
+                 };
+            int currentNode = 1;
+
+            DFS(graphAL, currentNode, visited);
+            Console.WriteLine();
+            DFSUsingStack(graphAL, currentNode);
+            Console.WriteLine();
+            BFS(graphAL, currentNode);
+            Console.WriteLine();
+            Console.WriteLine(hasPathDFS(graphAL, 1, 5));
+            Console.WriteLine();
+            Console.WriteLine(hasPathBFS(graphAL, 1, 5));
+            Console.WriteLine("CountConnectedComponents - " + CountConnectedComponents());
+        }
+
+        private static int CountConnectedComponents()
+        {
+            var graphAL = new Dictionary<int, int[]>() {
+                {0, new int[] {8, 1, 5 } },
+                {1, new int[] {0 } },
+                {5, new int[] {0, 8 } },
+                {8, new int[] {0 ,5 } },
+                {2, new int[] {3, 4 } },
+                {3, new int[] {2, 4 }},
+                {4, new int[] {3, 2 }}
+                 };
+
+            var dict = new Dictionary<int, bool>();
+            int counter = 0;
+            foreach (var node in graphAL.Keys)
+            {
+                if(Traverse(graphAL, node, dict) == true)
+                {
+                    counter++;
+                }
+            }
+            return counter;
+        }
+
+        private static bool Traverse(Dictionary<int, int[]> graphAL, int node, Dictionary<int, bool> dict)
+        {
+            if (dict.ContainsKey(node)) return false;
+
+            dict[node] = true;
+
+            foreach (var item in graphAL[node])
+            {
+                Traverse(graphAL, item, dict);
+            }
+            return true;
+        }
+
+        private static void BFS(Dictionary<int, int[]> graphAL, int currentNode)
+        {
+            var queue = new Queue<int>();
+            queue.Enqueue(currentNode);
+
+            while(queue.Count > 0)
+            {
+                int node = queue.Dequeue();
+                Console.Write(node + " ");
+                foreach (var item in graphAL[node])
+                {
+                    queue.Enqueue(item);
+                }
+            }
+        }
+
+        private static void DFSUsingStack(Dictionary<int, int[]> graphAL, int currentNode)
+        {
+            var stack = new Stack<int>();
+            stack.Push(currentNode);
+
+            while(stack.Count > 0)
+            {
+                var node = stack.Pop();
+                Console.Write(node + " ");
+                foreach (var item in graphAL[node])
+                {
+                    stack.Push(item);
+                }
+            }
+        }
+
+        private static bool hasPathBFS(Dictionary<int, int[]> graphAL, int source, int destination)
+        {
+            if (source == destination) return true;
+
+            var queue = new Queue<int>();
+            queue.Enqueue(source);
+            while(queue.Count > 0)
+            {
+                int item = queue.Dequeue();
+                if (item == destination) return true;
+
+                foreach (var node in graphAL[item])
+                {
+                    queue.Enqueue(node);
+                }
+            }
+            return false;
+        }
+
+        private static bool hasPathDFS(Dictionary<int, int[]> graphAL, int source, int destination)
+        {
+            if (source == destination) return true;
+
+            foreach (var item in graphAL[source])
+            {
+                if (hasPathDFS(graphAL, item, destination) == true)
+                    return true;
+            }
+            return false;
+        }
+
+        private static void DFS(Dictionary<int,int[]> graphAL, int currentNode, bool[] visited)
+        {
+            Console.Write(currentNode + " ");
+            visited[currentNode] = true;
+
+            foreach (var node in graphAL[currentNode])
+            {
+                if(visited[node] == false)
+                {
+                    //visited[node] = true;
+                    //Console.Write(node + " ");
+                    DFS(graphAL, node, visited);
+                }
+            }
         }
 
         private static int EvalPostfix(string expression)
