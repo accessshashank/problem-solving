@@ -40,6 +40,43 @@ namespace Practice
             Console.WriteLine();
             Console.WriteLine(hasPathBFS(graphAL, 1, 5));
             Console.WriteLine("CountConnectedComponents - " + CountConnectedComponents());
+            Console.WriteLine("LargestComponent - " + LargestComponent());
+        }
+
+        private static int LargestComponent()
+        {
+            var graphAL = new Dictionary<int, int[]>() {
+                {0, new int[] {8, 1, 5 } },
+                {1, new int[] {0 } },
+                {5, new int[] {0, 8 } },
+                {8, new int[] {0 ,5 } },
+                {2, new int[] {3, 4 } },
+                {3, new int[] {2, 4 }},
+                {4, new int[] {3, 2 }}
+                 };
+
+            var dict = new Dictionary<int, bool>();
+
+            int max = 0;
+            
+            foreach (var node in graphAL.Keys)
+            {
+                max = Math.Max(max, CountNodes(graphAL, node, dict));
+            }
+            return max;
+        }
+
+        private static int CountNodes(Dictionary<int, int[]> graphAL, int node, Dictionary<int, bool> dict)
+        {
+            if (dict.ContainsKey(node) == true) return 0;
+
+            dict[node] = true;
+            int counter = 1;
+            foreach (var item in graphAL[node])
+            {
+                counter = counter + CountNodes(graphAL, item, dict);
+            }
+            return counter;
         }
 
         private static int CountConnectedComponents()
