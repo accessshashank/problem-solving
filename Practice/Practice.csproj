@@ -105,6 +105,7 @@
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\CountNoOfIslands.cs" />
     <Compile Include="Graphs\DFS.cs" />
+    <Compile Include="Graphs\MinimumIslandSize.cs" />
     <Compile Include="GreedyAlgos\ActivitySelection.cs" />
     <Compile Include="GreedyAlgos\CoinChange.cs" />
     <Compile Include="GreedyAlgos\FractionalKnapsack.cs" />

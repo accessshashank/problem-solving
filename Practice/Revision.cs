@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Practice.Trees;
 using System.Threading.Tasks;
 
 namespace Practice
@@ -41,6 +42,90 @@ namespace Practice
             Console.WriteLine(hasPathBFS(graphAL, 1, 5));
             Console.WriteLine("CountConnectedComponents - " + CountConnectedComponents());
             Console.WriteLine("LargestComponent - " + LargestComponent());
+            Console.WriteLine("ShortestPath " + ShortestPath());
+
+            Console.WriteLine("Creating Binary Tree ... !");
+            var root = BinaryTreeHelper.InitializeBinaryTree();
+            Console.WriteLine("Sum - " + SumTree(root));
+
+            Console.WriteLine("Minimum - " + Minimum(root));
+
+            Console.WriteLine("MaxPathSum - " + MaxPathSum(root));
+        } 
+
+        private static int MaxPathSum(TreeNode<int> node)
+        {
+            if (node == null) return 0;
+
+            if(node.Left == null && node.Right == null)
+            {
+                return node.Value;
+            }
+
+            int left = MaxPathSum(node.Left);
+            int right = MaxPathSum(node.Right);
+
+            return node.Value + Math.Max(left, right);
+        }
+
+        private static int Minimum(TreeNode<int> node)
+        {
+            if (node == null) return int.MaxValue;
+
+            var leftMin = Minimum(node.Left);
+            var rightMin = Minimum(node.Right);
+
+            return Math.Min(node.Value, Math.Min(leftMin, rightMin));
+        }
+
+        private static int SumTree(TreeNode<int> node)
+        {
+            if (node == null) return 0;
+
+            int left = SumTree(node.Left);
+            int right = SumTree(node.Right);
+
+            return node.Value + left + right;
+        }
+
+        private static int ShortestPath()
+        {
+            var graphAL = new Dictionary<int, int[]>() {
+                {1, new int[] {2, 5 } },
+                {2, new int[] {1, 3 } },
+                {3, new int[] {2 ,4 } },
+                {4, new int[] {3, 5 } },
+                {5, new int[] {4, 1 }}
+                 };
+
+            var dict = new Dictionary<int, bool>();
+
+            var queue = new Queue<Tuple<int, int>>();
+            int source = 1;
+            int destination = 4;
+
+            queue.Enqueue(Tuple.Create(source, 0));
+            dict.Add(source, true);
+
+            while(queue.Count > 0)
+            {
+                var item = queue.Dequeue();
+
+                if (item.Item1 == destination) return item.Item2;
+
+                foreach(int neighbour in graphAL[item.Item1])
+                {
+                    if(!dict.ContainsKey(neighbour))
+                    {
+                        queue.Enqueue(Tuple.Create(neighbour, item.Item2 + 1));
+                        dict.Add(neighbour, true);
+                    }
+                    
+                }
+
+            }
+
+            return -1;
         }
 
         private static int LargestComponent()
