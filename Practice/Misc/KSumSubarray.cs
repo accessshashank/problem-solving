@@ -12,7 +12,7 @@ namespace Practice.Misc
         {
             int[] arr = new int[] { 0, -2, 1, 2, 3, 4, 5, 15, 10, 5};
             int k = 15;
-            Console.WriteLine(LongestSubarrayKSum(arr, k));
+            Console.WriteLine("LongestSubarrayKSum " + LongestSubarrayKSum(arr, k));
         }
 
         private static int LongestSubarrayKSum(int[] arr, int k)

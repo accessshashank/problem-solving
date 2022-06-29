@@ -91,12 +91,144 @@ namespace Practice
             int k = 3;
             int[] arr = new int[] {12, -1, -7, 8, -15, 30, 16, 28 };
             FirstNegativeNumberInEveryWindowOfSizeK(arr, k);
-            */
+            
 
             string pattern = "aaba";
             string str = "aabaabaa";
             Console.WriteLine("CountOccurrancesOfAnangrams - " + CountOccurrancesOfAnangrams(str, pattern));
+            
 
+            int k = 3;
+            int[] arr = new int[] { 1, 3, -1, -3, 5, 3, 6, 7};
+            MaximumOfAllSubArraysOfSizeK(arr, k);
+            
+
+            int sum = 5;
+            int[] arr = new int[] {4, 1, 1, 1, 2, 3, 5 };
+            
+            Console.WriteLine("LargestSubArrayLengthOfSumK " + LargestSubArrayLengthOfSumK(arr, sum));
+            
+            int noOfUniqueChars = 3;
+            string str = "aabacbebebe";
+            Console.WriteLine("LongestSubstringLengthWithKUniqueCharacters " + LongestSubstringLengthWithKUniqueCharacters(str, noOfUniqueChars));
+            */
+        }
+
+        
+        public static int LongestSubstringLengthWithKUniqueCharacters(string str, int k)
+        {
+            int maxLength = 0;
+            int len = str.Length;
+            var dict = new Dictionary<char, int>();
+
+            int i = 0;
+            int j = 0;
+
+            while(j < len)
+            {
+                char ch = str[j];
+                if(dict.ContainsKey(ch))
+                {
+                    dict[ch] += 1;
+                }
+                else
+                {
+                    dict.Add(ch, 1);
+                }
+                
+                if(dict.Keys.Count < k)
+                {
+                    j++;
+                }
+                else if(dict.Keys.Count == k)
+                {
+                    int length = 0;
+                    foreach (var key in dict.Keys)
+                    {
+                        length += dict[key];
+                    }
+                    maxLength = Math.Max(maxLength, length);
+                    j++;
+                }
+                else
+                {
+                    while(dict.Keys.Count > k)
+                    {
+                        char initial = str[i];
+                        dict[initial] -= 1;
+                        if(dict[initial] == 0)
+                        {
+                            dict.Remove(initial);
+                        }
+                        i++;
+                    }
+                    j++;
+                }
+            }
+            return maxLength;
+        }
+
+        public static int LargestSubArrayLengthOfSumK(int[] arr, int k)
+        {
+            // NOTE - This logic works only for +ve integers in array.
+            // for both +ve and -ve integers refer Practice.Misc.KSumSubarray
+            int maxSize = 0;
+            int i = 0;
+            int j = 0;
+            int len = arr.Length;
+            int sum = 0;
+
+            while(j < len)
+            {
+                sum += arr[j];
+                if(sum < k)
+                {
+                    j++;
+                }
+                else if(sum == k)
+                {
+                    maxSize = Math.Max(maxSize, j - i + 1);
+                    j++;
+                }
+                else
+                {
+                    while(sum > k)
+                    {
+                        sum -= arr[i];
+                        i++;
+                    }
+                    j++;
+                }
+            }
+            return maxSize;
+        }
+
+        public static void MaximumOfAllSubArraysOfSizeK(int[] arr, int k)
+        {
+            var maxArray = new List<int>();
+            var tempArray = new List<int>();
+            int i = 0;
+            int j = 0;
+            int n = arr.Length;
+
+            while(j < n)
+            {
+                tempArray.Add(arr[j]);
+                if((j - i + 1) < k)
+                {
+                    j++;
+                }
+                else if((j - i + 1) == k)
+                {
+                    int max = tempArray.Max();
+                    maxArray.Add(max);
+                    tempArray.RemoveAt(0);
+                    i++;
+                    j++;
+                }
+            }
+
+            Console.WriteLine(string.Join(",", maxArray.ToArray()));
         }
 
         public static int CountOccurrancesOfAnangrams(string str, string pattern)
