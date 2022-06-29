@@ -112,8 +112,64 @@ namespace Practice
             string str = "aabacbebebe";
             Console.WriteLine("LongestSubstringLengthWithKUniqueCharacters " + LongestSubstringLengthWithKUniqueCharacters(str, noOfUniqueChars));
             */
+
+            string str = "pwwkew";
+
+            Console.WriteLine("LongestSubstringLengthWithAllUniqueCharacters " + LongestSubstringLengthWithAllUniqueCharacters(str));
         }
 
+        public static int LongestSubstringLengthWithAllUniqueCharacters(string str)
+        {
+            int maxLength = 0;
+            int len = str.Length;
+            var dict = new Dictionary<char, int>();
+
+            int i = 0;
+            int j = 0;
+
+            while(j < len)
+            {
+                char ch = str[j];
+                if (dict.ContainsKey(ch))
+                {
+                    dict[ch] += 1;
+                }
+                else
+                {
+                    dict.Add(ch, 1);
+                }
+
+                if(AllUniqueChars(dict))
+                {
+                    maxLength = Math.Max(maxLength, dict.Count);
+                    j++;
+                }
+                else
+                {
+                    while(AllUniqueChars(dict) == false)
+                    {
+                        dict[str[i]] -= 1;
+
+                        if(dict[str[i]] == 0)
+                        {
+                            dict.Remove(str[i]);
+                        }
+                        i++;
+                    }
+                    j++;
+                }
+            }
+            return maxLength;
+        }
+
+        private static bool AllUniqueChars(Dictionary<char, int> dict)
+        {
+            foreach (var key in dict.Keys)
+            {
+                if (dict[key] > 1) return false;
+            }
+            return true;
+        }
         
         public static int LongestSubstringLengthWithKUniqueCharacters(string str, int k)
         {
