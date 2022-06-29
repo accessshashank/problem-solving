@@ -11,6 +11,7 @@ namespace Practice
     {
         static void Main(string[] args)
         {
+
             //string str = "abcd";
             //Perm("", str);
             //Subsets("", str);
@@ -20,6 +21,7 @@ namespace Practice
             //Console.WriteLine(InfixToPostfix("3*5+6/2-4"));
             //Console.WriteLine(EvalPostfix(InfixToPostfix("3*5+6/2-4")));
 
+            /*
             bool[] visited = new bool[] { false, false, false, false, false, false, false};
             var graphAL = new Dictionary<int, int[]>() { 
                 {1, new int[] {2, 3 } },
@@ -51,7 +53,374 @@ namespace Practice
             Console.WriteLine("Minimum - " + Minimum(root));
 
             Console.WriteLine("MaxPathSum - " + MaxPathSum(root));
-        } 
+           
+            int[] nums = new int[] { 2, 7, 11, 15 };
+            int target = 9;
+            Console.WriteLine(string.Join(",",TwoSum(nums, target)));
+             */
+
+            //int x = int.MaxValue; //2147483647
+            //300429827
+            //int i = 122;
+            //char ch = Convert.ToChar(i);
+            // Console.WriteLine(ch);
+
+            //int[][] input = new int [][] { new int[] {1, 0, 0, 0 }, new int[] {0, 0, 1, 1 }, new int[] {0, 0, 1, 1 } };
+            //var a = GetMaxRow(input);
+
+            //int[][] edges = new int[][] { new int[] { 0, 2 }, new int[] { 0, 5 }, new int[] { 2, 4 }, new int[] { 1, 6 }, new int[] { 5, 4 } };
+            //int n = 7;
+            //CountPairs(n, edges);
+
+            /*
+            int[][] grid = new int[][] { new int[] {2, 0, 0, 1 }, 
+                                         new int[] {0, 3, 1, 0 }, 
+                                         new int[] {0, 5, 2, 0 }, 
+                                         new int[] {4, 0, 0, 2 } };
+
+            CheckXMatrix(grid);
+
+           var x = CountHousePlacements(2);
+            
+
+            int k = 3;
+            int[] arr = new int[] {2, 5, 1, 8, 2, 9 ,1 };
+            MaxSumSubArrayOfSizeK(arr, k);
+            
+
+            int k = 3;
+            int[] arr = new int[] {12, -1, -7, 8, -15, 30, 16, 28 };
+            FirstNegativeNumberInEveryWindowOfSizeK(arr, k);
+            */
+
+            string pattern = "aaba";
+            string str = "aabaabaa";
+            Console.WriteLine("CountOccurrancesOfAnangrams - " + CountOccurrancesOfAnangrams(str, pattern));
+
+        }
+
+        public static int CountOccurrancesOfAnangrams(string str, string pattern)
+        {
+            int ans = 0;
+            int[] patternArray = new int[26];
+            int[] stringArray = new int[26];
+
+            for(int i=0; i < 26;i++)
+            {
+                patternArray[i] = 0;
+                stringArray[i] = 0;
+            }
+
+            int window = pattern.Length;
+            int left = 0; int right = 0;
+            while(right < window)
+            {
+                
+                patternArray[pattern[right] - 'a']++;
+                stringArray[str[right] - 'a']++;
+                right++;
+            }
+
+            right--;
+
+            while(right < str.Length)
+            {
+                if(Compare(stringArray, patternArray))
+                {
+                    ans++;
+                }
+                right++;
+                if(right < str.Length)
+                {
+                    stringArray[str[right] - 'a'] += 1;
+                }
+                stringArray[str[left] - 'a'] -= 1;
+                left++;
+            }
+            return ans;
+        }
+
+        private static bool Compare(int[] first, int[] second)
+        {
+            for(int i =0; i < first.Length; i++)
+            {
+                if(first[i] != second[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        public static void FirstNegativeNumberInEveryWindowOfSizeK(int[] arr, int k)
+        {
+            var negatives = new List<int>();
+            var answers = new List<int>();
+            int i = 0;
+            int j = 0;
+            while(j < arr.Length)
+            {
+                if(arr[j] < 0)
+                {
+                    negatives.Add(arr[j]);
+                }
+
+                if((j - i + 1) < k)
+                {
+                    j++;
+                }
+                else if((j-i+1) == k)
+                {
+                    if(negatives.Count > 0)
+                    {
+                        answers.Add(negatives[0]);
+                    }
+
+                    if(arr[i] < 0)
+                    {
+                        negatives.RemoveAt(0);
+                    }
+                    i++;
+                    j++;
+                }
+            }
+
+            Console.WriteLine(string.Join(",", answers.ToArray()));
+        }
+
+        public static int MaxSumSubArrayOfSizeK(int[] arr, int k)
+        {
+            if (k >= arr.Length) return arr.Sum();
+
+            int sum = 0;
+            int maxSum = 0;
+            for(int i = 0; i<k; i++)
+            {
+                sum += arr[i];
+            }
+            maxSum = sum;
+
+            int first = 0;
+            int last = k;
+            while(last < arr.Length)
+            {
+                sum = sum + arr[last] - arr[first];
+                maxSum = Math.Max(maxSum, sum);
+                last++;
+                first++;
+            }
+
+            return maxSum;
+        }
+        public static int CountHousePlacements(int n)
+        {
+            int[] plots = new int[n];
+            int sum = PlaceHouse(plots, 0);
+            return 2 * sum;
+        }
+
+        private static int PlaceHouse(int[] plots, int currentIndex)
+        {
+            if (currentIndex >= plots.Length) return 0;
+
+            int putHouseInCurrentIndex = 1 + PlaceHouse(plots, currentIndex + 2);
+            int skipCurrentIndex = PlaceHouse(plots, currentIndex + 1);
+
+            return putHouseInCurrentIndex + skipCurrentIndex;
+        }
+
+        public static bool CheckXMatrix(int[][] grid)
+        {
+            if (grid == null || grid.Length == 0) return false;
+
+            bool isDiagonalSatisfied = CheckDiagonal(grid);
+            if (isDiagonalSatisfied == false) return false;
+            bool isOthers = CheckOthers(grid);
+            return isOthers;
+        }
+
+        private static bool CheckDiagonal(int[][] grid)
+        {
+            int j = grid.Length - 1;
+            for (int i = 0; i < grid.Length; i++)
+            {
+                if (grid[i][i] == 0 || grid[i][j] == 0) return false;
+                j--;
+            }
+            return true;
+        }
+
+        private static bool CheckOthers(int[][] grid)
+        {
+            int k = grid[0].Length - 1;
+            for (int i = 0; i < grid.Length; i++)
+            {
+                for (int j = 0; j < grid[0].Length; j++)
+                {
+                    if (i == j) continue;
+                    if (j == k) continue;
+                    if (grid[i][j] != 0) return false;
+                   
+                }
+                k--;
+            }
+            return true;
+        }
+    
+
+    public static long CountPairs(int n, int[][] edges)
+        {
+            if (n == 1) return 0;
+            var visited = new Dictionary<int, bool>();
+            var queue = new Queue<int>();
+
+
+            int previousCount = 0;
+            int currentCount = 0;
+            long mult = 1;
+
+            for (int node = 0; node < n; node++)
+            {
+                if (node == 1 && currentCount == n) return 0;
+
+                if (currentCount > previousCount)
+                {
+                    mult = mult * (currentCount - previousCount);
+                }
+
+                previousCount = visited.Keys.Count();
+
+                if (visited.ContainsKey(node) == false)
+                {
+                    queue.Enqueue(node);
+                    visited.Add(node, true);
+                }
+
+                while (queue.Count > 0)
+                {
+                    var poppedNode = queue.Dequeue();
+
+                    for (int i = 0; i < edges.Length; i++)
+                    {
+                        var temp = edges[i][0];
+                        if (temp == poppedNode)
+                        {
+                            var adjacentNode = edges[i][1];
+                            if (visited.ContainsKey(adjacentNode) == false)
+                            {
+                                queue.Enqueue(adjacentNode);
+                                visited.Add(adjacentNode, true);
+                            }
+                        }
+                    }
+                }
+
+                currentCount = visited.Keys.Count();
+            }
+
+            return mult;
+        }
+
+        public static int GetMaxRow(int[][] input)
+        {
+            int result = -1;
+
+            for(int col = 0; col < input[0].Length; col++)
+            {
+                for(int row = 0; row < input.Length; row++)
+                {
+                    if(input[row][col] == 1)
+                    {
+                        result = row;
+                        break;
+                    }
+                }
+                if (result > -1) break;
+            }
+
+            return result;
+        }
+
+        public static string Reverse(string s)
+        {
+            char[] charArray = s.ToCharArray();
+            Array.Reverse(charArray);
+            return new string(charArray);
+        }
+
+        private static int longestSubsequence(string s1, int k)
+        {
+            
+            var s = Reverse(s1);
+            int ans = 0;
+            for (int i = 0; i < s.Length; ++i)
+            {
+                if (s[i] == '0')
+                    ++ans;
+                else if (i < 30)
+                {
+                    if (k >= (1 << i))
+                    {
+                        ++ans;
+                        k -= (1 << i);
+                    }
+                }
+            }
+            return ans;
+        }
+
+        int minimumNumbers1(int num, int k)
+        {
+            if (num == 0) return num;
+            for (int i = 1; i <= num; i++)
+            {
+                int contrib = k * i;
+                int lft = num - contrib;
+                if (lft < 0) return -1;
+                if (lft % 10 == 0) return i;
+            }
+            return -1;
+        }
+
+        private static int MinimumNumbers(int num, int k)
+        {
+            if (num == 0)
+                return 0;
+            for (int i = 1; i <= 100; ++i)
+            {
+                if (k * i <= num && (k * i) % 10 == num % 10)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        public static int[] TwoSum(int[] nums, int target)
+        {
+            var dict = new Dictionary<int, int>();
+            for (int i = 0; i < nums.Length; i++)
+            {
+                dict.Add(nums[i], i);
+            }
+
+            Array.Sort(nums);
+
+            int low = 0;
+            int high = nums.Length - 1;
+            while (low < high)
+            {
+                int sum = nums[low] + nums[high];
+                if (sum == target) return new int[] { dict[low], dict[high] };
+
+                if (sum < target)
+                    low++;
+                else
+                    high--;
+
+            }
+            return new int[] { -1, -1 };
+        }
 
         private static int MaxPathSum(TreeNode<int> node)
         {
