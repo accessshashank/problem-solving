@@ -117,25 +117,30 @@ namespace Practice
             {
                 
                 patternArray[pattern[right] - 'a']++;
-                stringArray[str[right] - 'a']++;
                 right++;
             }
 
-            right--;
+            left = 0;
+            right = 0;
 
             while(right < str.Length)
             {
-                if(Compare(stringArray, patternArray))
+                stringArray[str[right] - 'a']++;
+                if ((right - left + 1) < window)
                 {
-                    ans++;
+                    right++;
                 }
-                right++;
-                if(right < str.Length)
+                else if((right-left+1) == window)
                 {
-                    stringArray[str[right] - 'a'] += 1;
+                    bool areEqual = Compare(stringArray, patternArray);
+                    if(areEqual)
+                    {
+                        ans++;
+                    }
+                    right++;
+                    stringArray[str[left] - 'a'] -= 1;
+                    left++;
                 }
-                stringArray[str[left] - 'a'] -= 1;
-                left++;
             }
             return ans;
         }
