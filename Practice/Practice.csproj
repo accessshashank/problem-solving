@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Revision</StartupObject>
+    <StartupObject>Practice.GreedyAlgos.FractionalKnapsack</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />

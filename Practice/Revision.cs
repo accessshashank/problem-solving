@@ -111,11 +111,86 @@ namespace Practice
             int noOfUniqueChars = 3;
             string str = "aabacbebebe";
             Console.WriteLine("LongestSubstringLengthWithKUniqueCharacters " + LongestSubstringLengthWithKUniqueCharacters(str, noOfUniqueChars));
-            */
+            
 
             string str = "pwwkew";
 
             Console.WriteLine("LongestSubstringLengthWithAllUniqueCharacters " + LongestSubstringLengthWithAllUniqueCharacters(str));
+            */
+
+            string subStr = "toc";
+            string str = "attrdofrccot";
+            Console.WriteLine("MinimumLengthSubstringContainingAGivenString " + MinimumLengthSubstringContainingAGivenString(str, subStr));
+        }
+
+        public static int MinimumLengthSubstringContainingAGivenString(string str, string subStr)
+        {
+            int minLength = int.MaxValue;
+            int len = str.Length;
+            int i = 0;
+            int j = 0;
+            var tempStr = String.Empty;
+            var tempDict = new Dictionary<char, int>();
+
+            var dictSubStr = new Dictionary<char, int>();
+            foreach (var ch in subStr)
+            {
+                if(dictSubStr.ContainsKey(ch))
+                {
+                    dictSubStr[ch] += 1;
+                }
+                else
+                {
+                    dictSubStr.Add(ch, 1);
+                }
+            }
+
+            while(j < len)
+            {
+                char ch = str[j];
+                tempStr = tempStr + ch;
+                if(tempDict.ContainsKey(ch))
+                {
+                    tempDict[ch] += 1;
+                }
+                else
+                {
+                    tempDict.Add(ch, 1);
+                }
+
+                if(AllCharsPresent(tempDict, dictSubStr))
+                {
+                    int n = tempStr.Length;
+                    minLength = Math.Min(minLength, n);
+                    Console.WriteLine("MinLength - " + minLength);
+                    while(AllCharsPresent(tempDict, dictSubStr))
+                    {
+                        tempDict[tempStr[0]] -= 1;
+                        if (tempDict[tempStr[0]] == 0)
+                        {
+                            tempDict.Remove(tempStr[0]);
+                        }
+                        
+                        minLength = Math.Min(minLength, tempStr.Length);
+                        Console.WriteLine("MinLength - " + minLength);
+                        tempStr = tempStr.Remove(0, 1);
+                        i++;
+                    }
+                    
+                }
+                j++;
+            }
+            return minLength;
+        }
+
+        private static bool AllCharsPresent(Dictionary<char, int> tempDict, Dictionary<char, int> dictSubStr)
+        {
+            foreach (var key in dictSubStr.Keys)
+            {
+                if (tempDict.ContainsKey(key) == false) return false;
+                if (dictSubStr[key] > tempDict[key]) return false;
+            }
+            return true;
         }
 
         public static int LongestSubstringLengthWithAllUniqueCharacters(string str)
