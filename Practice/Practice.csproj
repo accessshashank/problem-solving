@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.GridTraveller</StartupObject>
+    <StartupObject>Practice.DP.TargetSum</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -103,6 +103,7 @@
     <Compile Include="DP\MinPathSum.cs" />
     <Compile Include="DP\NinjaTraining.cs" />
     <Compile Include="DP\SubsequenceSumEqualsTarget.cs" />
+    <Compile Include="DP\TargetSum.cs" />
     <Compile Include="Graphs\BFS.cs" />
     <Compile Include="Graphs\CountNoOfIslands.cs" />
     <Compile Include="Graphs\DFS.cs" />
