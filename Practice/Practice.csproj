@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.TargetSum</StartupObject>
+    <StartupObject>Practice.DP.HowSum</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -98,6 +98,7 @@
     <Compile Include="DP\FrogJump.cs" />
     <Compile Include="DP\GridTraveller.cs" />
     <Compile Include="DP\GridUniquePaths.cs" />
+    <Compile Include="DP\HowSum.cs" />
     <Compile Include="DP\MaximumSumOfNonAdjacentElement.cs" />
     <Compile Include="DP\MaxPathSumVariableStartEndPoints.cs" />
     <Compile Include="DP\MinPathSum.cs" />
