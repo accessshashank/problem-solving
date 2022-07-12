@@ -14,11 +14,14 @@ namespace Practice.DP
             // elements of array can be reused as many times as needed
             Console.WriteLine(Count("abcdef", new string[] {"ab", "abc", "cd", "def", "abcd" })); // 1
             Console.WriteLine(Count("purple", new string[] { "purp", "p", "ur", "le", "purpl" })); // 2
+            Console.WriteLine(Count("enterapotentpot", new string[] { "a", "p", "ent", "enter", "ot", "o", "t" })); // 4
 
             var dp = new Dictionary<string, int>();
             Console.WriteLine(CountDP("abcdef", new string[] { "ab", "abc", "cd", "def", "abcd" }, dp)); // 1
             dp = new Dictionary<string, int>();
             Console.WriteLine(CountDP("purple", new string[] { "purp", "p", "ur", "le", "purpl" }, dp)); // 2
+            dp = new Dictionary<string, int>();
+            Console.WriteLine(CountDP("enterapotentpot", new string[] { "a", "p", "ent", "enter", "ot", "o", "t" }, dp)); // 4
         }
 
         private static int CountDP(string target, string[] arr, Dictionary<string, int> dp)
