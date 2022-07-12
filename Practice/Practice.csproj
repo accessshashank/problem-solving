@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.CanConstruct</StartupObject>
+    <StartupObject>Practice.DP.CountConstruct</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -96,6 +96,7 @@
     <Compile Include="DP\CanConstruct.cs" />
     <Compile Include="DP\CherryPickUP.cs" />
     <Compile Include="DP\ClimbingStairs.cs" />
+    <Compile Include="DP\CountConstruct.cs" />
     <Compile Include="DP\Fibonacci.cs" />
     <Compile Include="DP\FrogJump.cs" />
     <Compile Include="DP\GridTraveller.cs" />
