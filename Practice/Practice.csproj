@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.BestSum</StartupObject>
+    <StartupObject>Practice.DP.CanConstruct</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -93,6 +93,7 @@
     <Compile Include="DivideAndConquer\NumberOfPathsToLastCellWithGivenCost.cs" />
     <Compile Include="DivideAndConquer\ZeroOneKnapsack.cs" />
     <Compile Include="DP\BestSum.cs" />
+    <Compile Include="DP\CanConstruct.cs" />
     <Compile Include="DP\CherryPickUP.cs" />
     <Compile Include="DP\ClimbingStairs.cs" />
     <Compile Include="DP\Fibonacci.cs" />
