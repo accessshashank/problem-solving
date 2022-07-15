@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.CountConstruct</StartupObject>
+    <StartupObject>Practice.DP.AllConstruct</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -92,6 +92,7 @@
     <Compile Include="DivideAndConquer\MinCostToReachLastCellIn2DArray.cs" />
     <Compile Include="DivideAndConquer\NumberOfPathsToLastCellWithGivenCost.cs" />
     <Compile Include="DivideAndConquer\ZeroOneKnapsack.cs" />
+    <Compile Include="DP\AllConstruct.cs" />
     <Compile Include="DP\BestSum.cs" />
     <Compile Include="DP\CanConstruct.cs" />
     <Compile Include="DP\CherryPickUP.cs" />
