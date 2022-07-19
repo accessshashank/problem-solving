@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.Recursion.SubsequenceWithGivenSum</StartupObject>
+    <StartupObject>Practice.Recursion.CombinationSum</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -147,6 +147,8 @@
     <Compile Include="Queue\QueueUsingLL.cs" />
     <Compile Include="Queue\QueueUsingTwoStacks.cs" />
     <Compile Include="Recursion\CheckArraySorted.cs" />
+    <Compile Include="Recursion\CombinationSum.cs" />
+    <Compile Include="Recursion\CountSubsequenceWithGivenSum.cs" />
     <Compile Include="Recursion\CountZeros.cs" />
     <Compile Include="Recursion\FastPower.cs" />
     <Compile Include="Recursion\Fibonacci.cs" />
