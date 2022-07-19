@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <StartupObject>Practice.DP.AllConstruct</StartupObject>
+    <StartupObject>Practice.Recursion.SubsequenceWithGivenSum</StartupObject>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -164,6 +164,7 @@
     <Compile Include="Recursion\RemoveA.cs" />
     <Compile Include="Recursion\ReverseANumber.cs" />
     <Compile Include="Recursion\Subsequence.cs" />
+    <Compile Include="Recursion\SubsequenceWithGivenSum.cs" />
     <Compile Include="Recursion\Subset.cs" />
     <Compile Include="Recursion\SuDoKu.cs" />
     <Compile Include="Recursion\SumOfDigits.cs" />
